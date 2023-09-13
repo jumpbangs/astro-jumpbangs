@@ -1,0 +1,29 @@
+---
+import Breadcrumbs from 'components/Breadcrumbs.astro';
+import Footer from 'components/common/Footer.astro';
+import Header from 'components/common/Header.astro';
+import DateTime from 'components/DateTime.astro';
+import Tags from 'components/Tags.astro';
+import Layout from 'layouts/Layout.astro';
+
+const { post } = Astro.props;
+
+const { title, tags, pubDate } = post.data;
+
+const { Content } = await post.render();
+---
+
+<Layout title={title}>
+  <Header />
+  <Breadcrumbs />
+  <h1 class="text-3xl text-slate-800 dark:text-slate-400">{title}</h1>
+  <DateTime dateTime={pubDate} />
+  <section class="text-slate-800 dark:text-slate-400">
+    <article class="article-section mx-auto mt-2">
+      <Content />
+    </article>
+  </section>
+
+  <Tags tags={tags} />
+  <Footer />
+</Layout>

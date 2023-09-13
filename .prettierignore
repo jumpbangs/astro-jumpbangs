@@ -1,0 +1,12 @@
+# Ignore everything
+/*
+
+# Expect for the following files
+!/src
+!/public
+!tsconfig.json
+!astro.config.mjs
+!package.json
+!.prettirrc
+!.eslintrc.js
+!tailwind.config.cjs

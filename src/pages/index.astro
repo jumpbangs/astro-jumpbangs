@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from 'components/common/Footer.astro';
+import Header from 'components/common/Header.astro';
+---
+
+<Layout title="jumpbangs">
+  <div
+    class="hero flex flex-col text-white"
+    style="background-image: url(../../public/assets/images/wallhaven.jpeg);"
+  >
+    <div class="container mx-auto">
+      <Header toggleOff={true} />
+    </div>
+    <div class="hero h-screen">
+      <!-- <div class="hero-overlay bg-opacity-60"></div> -->
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="mb-5 text-5xl font-bold">Hello there 👋</h1>
+          <p class="mb-5">I am a web developer based in Perth</p>
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto">
+      <Footer />
+    </div>
+  </div>
+</Layout>

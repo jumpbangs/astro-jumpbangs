@@ -1,0 +1,55 @@
+---
+import Layout from 'layouts/Layout.astro';
+import Header from 'components/common/Header.astro';
+import type { CollectionEntry } from 'astro:content';
+import Footer from 'components/common/Footer.astro';
+
+export interface Props {
+  totalPages: number;
+  pageNumber: number;
+  postData: CollectionEntry<'post'>[];
+}
+const { totalPages, postData, pageNumber } = Astro.props;
+---
+
+<Layout title="Posts">
+  <Header />
+  <section>
+    <h1 class="text-3xl text-slate-800 dark:text-slate-400">All Posts</h1>
+    <div class="my-7">
+      {
+        postData.map(post => (
+          <a href={`/posts/${post.slug}`}>
+            <div class="card my-8 w-full bg-base-100 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title">{post.data.title}</h2>
+                <p>{post.data.description}</p>
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="item-center flex justify-center">
+      {
+        totalPages > 1 && (
+          <div class="join">
+            {pageNumber > 1 && (
+              <a href={`/posts${pageNumber - 1 !== 1 ? '/' + (pageNumber - 1) : ''}`}>
+                <button class="btn join-item">«</button>
+              </a>
+            )}
+            <button class="btn join-item no-animation cursor-default">Page {pageNumber}</button>
+            {pageNumber < totalPages && (
+              <a href={`/posts/${pageNumber + 1}`}>
+                <button class="btn join-item">»</button>
+              </a>
+            )}
+          </div>
+        )
+      }
+    </div>
+  </section>
+  <Footer />
+</Layout>

@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.article-section {
+  @apply p-2;
+}
+
+.article-section h1 {
+  @apply my-2;
+  @apply text-2xl;
+  @apply font-bold;
+}
+
+.article-section h2 {
+  @apply my-2;
+  @apply text-xl;
+  @apply font-semibold;
+}
+
+.article-section h3 {
+  @apply my-2;
+  @apply text-lg;
+  @apply font-semibold;
+}
+
+.article-section p {
+  @apply my-4;
+  @apply text-base;
+}
+
+.article-section ul {
+  @apply font-semibold;
+  @apply pl-4;
+}
+
+.article-section li {
+  @apply list-decimal;
+}
+
+.article-section table {
+  @apply table;
+}
+
+.article-section thead tr {
+  background-color: #1f2937;
+  color: #ffffff;
+  text-align: left;
+}
+
+.article-section th,
+.article-section td {
+  padding: 12px 15px;
+  color: #ffffff;
+}
+
+.article-section tbody tr {
+  border-bottom: 1px solid #71717a;
+}
+
+.article-section tbody tr:nth-of-type(even) {
+  background-color: #71717a;
+}
+
+.article-section tbody tr:last-of-type {
+  border-bottom: 2px solid #1f2937;
+}
+
+.article-section tbody tr.active-row {
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.article-section img {
+  max-width: 100%;
+  border-radius: 10px;
+}

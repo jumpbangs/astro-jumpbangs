@@ -1,0 +1,35 @@
+---
+// Remove current url path and remove trailing slash if exists
+const currentUrlPath = Astro.url.pathname.replace(/\/+$/, '');
+
+// Get url array from path
+// eg: /tags/tailwindcss => ['tags', 'tailwindcss']
+const breadcrumbList = currentUrlPath.split('/').slice(1);
+const parentPage = breadcrumbList[0];
+
+breadcrumbList[0] === 'posts' &&
+  breadcrumbList.splice(0, 2, `Posts (page ${breadcrumbList[1] || 1})`);
+---
+
+<div class="breadcrumbs text-sm text-slate-800 dark:text-slate-400">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href=`/${parentPage}`>{parentPage}</a></li>
+    {
+      breadcrumbList.map((breadcrumb, index) =>
+        index + 1 === breadcrumbList.length ? (
+          <li>
+            <a aria-current="page">
+              {/* make the last part lowercase in Home > Tags > some-tag */}
+              {breadcrumb}
+            </a>
+          </li>
+        ) : (
+          <li>
+            <a href={`/${breadcrumb}`}>{breadcrumb}</a>
+          </li>
+        )
+      )
+    }
+  </ul>
+</div>

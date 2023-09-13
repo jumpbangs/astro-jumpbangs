@@ -1,0 +1,15 @@
+---
+import Posts from 'layouts/Posts.astro';
+import { getCollection } from 'astro:content';
+import { MAX_BLOG_COUNT } from 'utils/contants';
+import { getPageNumbers, getSortedPosts } from 'utils/pagination';
+
+const posts = await getCollection('post');
+
+const sortedPosts = getSortedPosts(posts);
+const totalPages = getPageNumbers(sortedPosts.length);
+
+const paginatedPosts = sortedPosts.slice(0, MAX_BLOG_COUNT);
+---
+
+<Posts postData={paginatedPosts} totalPages={totalPages.length} pageNumber={1} />

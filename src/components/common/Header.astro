@@ -1,0 +1,43 @@
+---
+import { SITE_ROUTES } from 'utils/contants';
+import ToggleTheme from 'components/ToggleTheme.astro';
+
+const checkIfCurrentPage = (url: string) => {
+  return Astro.url.pathname.includes(url);
+};
+
+const { toggleOff = false } = Astro.props;
+---
+
+<header>
+  <nav class="navbar">
+    <div class="flex-1">
+      <a class="btn btn-ghost text-xl normal-case" href="/">Logo</a>
+    </div>
+
+    <div class="flex-none gap-2">
+      <ul class="menu menu-horizontal px-1 text-zinc-100 dark:text-slate-100">
+        <li>
+          <a
+            class={`px-2  ${checkIfCurrentPage('/projects') && 'btn-active'}`}
+            href={SITE_ROUTES.projects.url}>{SITE_ROUTES.projects.name}</a
+          >
+        </li>
+        <li>
+          <a
+            class={`px-2 ${checkIfCurrentPage('/posts') && 'btn-active'}`}
+            href={SITE_ROUTES.blog.url}>{SITE_ROUTES.blog.name}</a
+          >
+        </li>
+        <li>
+          <a
+            class={`px-2 ${checkIfCurrentPage('/about') && 'btn-active'}`}
+            href={SITE_ROUTES.about.url}>{SITE_ROUTES.about.name}</a
+          >
+        </li>
+        {!toggleOff && <ToggleTheme />}
+        <!-- <ToggleTheme /> -->
+      </ul>
+    </div>
+  </nav>
+</header>

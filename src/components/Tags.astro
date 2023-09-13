@@ -1,0 +1,21 @@
+---
+export interface Props {
+  tags: string[];
+  size?: 'sm' | 'lg';
+}
+const { tags, size = 'sm' } = Astro.props;
+---
+
+<div class="my-8 text-slate-800 dark:text-slate-400">
+  Tags :
+  {
+    tags.map(tag => (
+      <li
+        class={`inline-block ${
+          size === 'sm' ? 'my-1 underline-offset-4' : 'mx-1 my-3 underline-offset-8'
+        }`}>
+        <a class={`${size === 'sm' ? 'text-sm' : 'text-lg'} group badge badge-lg`}>{tag}</a>
+      </li>
+    ))
+  }
+</div>

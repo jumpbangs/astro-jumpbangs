@@ -1,0 +1,20 @@
+---
+import Layout from 'layouts/Layout.astro';
+import Header from 'components/common/Header.astro';
+import Footer from 'components/common/Footer.astro';
+---
+
+<Layout title="Oops...">
+  <div class="container mx-auto h-screen">
+    <Header />
+    <div class="my-8 text-center text-slate-800 dark:text-slate-400">
+      <h1 class="text-2xl">404</h1>
+      <span>Sorry the following page/link is not available...🚨</span>
+
+      <div class="my-20">
+        <a class="link" href="/">Go back home</a>
+      </div>
+    </div>
+    <Footer />
+  </div>
+</Layout>
