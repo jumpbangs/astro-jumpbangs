@@ -32,4 +32,4 @@ Cillum aliqua amet do nulla labore. Veniam esse proident consectetur incididunt 
 
 Aliquip incididunt cillum aliquip dolore deserunt culpa tempor. Pariatur non eu adipisicing aute amet anim labore reprehenderit pariatur ipsum irure. Nisi et sunt cupidatat anim deserunt elit veniam laborum. Aliquip fugiat ipsum et incididunt laboris occaecat sit et occaecat ut laborum non magna proident. Ea consequat nulla Lorem occaecat proident ullamco exercitation. Ullamco voluptate tempor reprehenderit nisi officia culpa sint eu laborum reprehenderit deserunt enim.
 
-![Alt text](../../assets/images/merida.big.nine.jpg)
+![Alt text](/images/merida.big.nine.jpg)
