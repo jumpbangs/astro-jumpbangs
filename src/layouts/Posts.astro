@@ -1,7 +1,8 @@
 ---
+import type { CollectionEntry } from 'astro:content';
+
 import Layout from 'layouts/Layout.astro';
 import Header from 'components/common/Header.astro';
-import type { CollectionEntry } from 'astro:content';
 import Footer from 'components/common/Footer.astro';
 
 export interface Props {
@@ -9,6 +10,7 @@ export interface Props {
   pageNumber: number;
   postData: CollectionEntry<'post'>[];
 }
+
 const { totalPages, postData, pageNumber } = Astro.props;
 ---
 

@@ -1,7 +1,8 @@
 ---
-import Posts from 'layouts/Posts.astro';
 import { getCollection } from 'astro:content';
-import { MAX_BLOG_COUNT } from 'utils/contants';
+
+import Posts from 'layouts/Posts.astro';
+import { MAX_BLOG_COUNT } from 'utils/constants';
 import { getPageNumbers, getSortedPosts } from 'utils/pagination';
 
 const posts = await getCollection('post');

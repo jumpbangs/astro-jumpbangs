@@ -1,6 +1,5 @@
 ---
-import { SITE_ROUTES } from 'utils/contants';
-import { Image } from 'astro:assets';
+import { SITE_ROUTES } from 'utils/constants';
 import ToggleTheme from 'components/ToggleTheme.astro';
 
 const checkIfCurrentPage = (url: string) => {
@@ -42,8 +41,13 @@ const { toggleOff = false } = Astro.props;
             href={SITE_ROUTES.about.url}>{SITE_ROUTES.about.name}</a
           >
         </li>
-        {!toggleOff && <ToggleTheme />}
-        <!-- <ToggleTheme /> -->
+        {
+          !toggleOff && (
+            <li>
+              <ToggleTheme />
+            </li>
+          )
+        }
       </ul>
     </div>
   </nav>
