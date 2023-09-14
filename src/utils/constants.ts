@@ -5,3 +5,9 @@ export const SITE_ROUTES = {
   blog: { url: '/posts', name: 'Blogs' },
   projects: { url: '/projects', name: 'Projects' },
 };
+
+export const SOCIAL_DATA = {
+  email: 'amitchongbang@gmail.com',
+  github: 'https://github.com/jumpbangs',
+  linkedin: 'https://www.linkedin.com/in/amit-chongbang/',
+}
