@@ -1,5 +1,6 @@
 ---
 import { SITE_ROUTES } from 'utils/contants';
+import { Image } from 'astro:assets';
 import ToggleTheme from 'components/ToggleTheme.astro';
 
 const checkIfCurrentPage = (url: string) => {
@@ -12,7 +13,13 @@ const { toggleOff = false } = Astro.props;
 <header>
   <nav class="navbar">
     <div class="flex-1">
-      <a class="btn btn-ghost text-xl normal-case" href="/">Logo</a>
+      <a class="btn btn-ghost text-xl normal-case" href="/">
+        <div class="avatar">
+          <div class="mask mask-squircle w-8">
+            <img src="/favicon.svg" />
+          </div>
+        </div>
+      </a>
     </div>
 
     <div class="flex-none gap-2">
