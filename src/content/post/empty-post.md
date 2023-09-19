@@ -28,8 +28,8 @@ Ad exercitation ut nostrud sunt labore irure laboris cupidatat in consectetur si
 
 Cillum aliqua amet do nulla labore. Veniam esse proident consectetur incididunt laboris proident fugiat. Ea pariatur irure ea voluptate minim magna incididunt. Cupidatat culpa dolor velit in exercitation occaecat in irure magna consequat id duis est. Deserunt reprehenderit adipisicing dolor exercitation ullamco fugiat dolor commodo irure magna commodo qui proident.
 
-## Section 2 
+## Section 2
 
 Aliquip incididunt cillum aliquip dolore deserunt culpa tempor. Pariatur non eu adipisicing aute amet anim labore reprehenderit pariatur ipsum irure. Nisi et sunt cupidatat anim deserunt elit veniam laborum. Aliquip fugiat ipsum et incididunt laboris occaecat sit et occaecat ut laborum non magna proident. Ea consequat nulla Lorem occaecat proident ullamco exercitation. Ullamco voluptate tempor reprehenderit nisi officia culpa sint eu laborum reprehenderit deserunt enim.
 
-![Alt text](assets/images/merida.big.nine.jpg)
+![Alt text](/images/merida.big.nine.jpg)
