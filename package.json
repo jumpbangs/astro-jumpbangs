@@ -44,7 +44,8 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,md,mdx,json}": [
-      "prettier --plugin-search-dir=. --write"
+      "prettier --plugin-search-dir=. --write",
+      "astro build"
     ]
   }
 }
