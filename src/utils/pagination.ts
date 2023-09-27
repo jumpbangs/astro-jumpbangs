@@ -1,5 +1,5 @@
-import slugify from 'slugify';
 import type { CollectionEntry } from 'astro:content';
+import slugify from 'slugify';
 
 export const getPageNumbers = (numberOfPosts: number) => {
   const numberOfPages = numberOfPosts / 3;

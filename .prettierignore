@@ -8,5 +8,5 @@
 !astro.config.mjs
 !package.json
 !.prettirrc
-!.eslintrc.js
+!.eslintrc.cjs
 !tailwind.config.cjs

@@ -1,9 +1,8 @@
 ---
 import type { GetStaticPaths } from 'astro';
 import { type CollectionEntry, getCollection } from 'astro:content';
-
-import Posts from 'layouts/Posts.astro';
 import PostPage from 'layouts/PostPage.astro';
+import Posts from 'layouts/Posts.astro';
 import { MAX_BLOG_COUNT } from 'utils/constants';
 import { getPageNumbers, getSortedPosts } from 'utils/pagination';
 

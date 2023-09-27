@@ -1,6 +1,6 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: ['plugin:astro/recommended', 'prettier', 'unused-imports'],
+  extends: ['plugin:astro/recommended', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     tsconfigRootDir: __dirname,
@@ -21,7 +21,7 @@ module.exports = {
       },
     },
   ],
-  plugins: ['simple-import-sort'],
+  plugins: ['simple-import-sort', 'unused-imports'],
   rules: {
     'no-console': 'error',
     'no-unused-vars': 'off', // or "@typescript-eslint/no-unused-vars": "off",
@@ -29,6 +29,27 @@ module.exports = {
     'unused-imports/no-unused-vars': [
       'warn',
       { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
+    ],
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [
+          // Packages `react` related packages come first.
+          ['^react', '^@?\\w'],
+          // Internal packages.
+          ['^(@|components)(/.*|$)'],
+          // Internal packages.
+          ['^(@screen|@navigation)(/.*|$)'],
+          // Side effect imports.
+          ['^\\u0000'],
+          // Parent imports. Put `..` last.
+          ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+          // Other relative imports. Put same-folder imports and `.` last.
+          ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+          // Style imports.
+          ['^.+\\.?(css)$'],
+        ],
+      },
     ],
   },
 };

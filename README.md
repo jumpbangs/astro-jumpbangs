@@ -1,8 +1,9 @@
 # Jumpbangs - Astro based portfolio
 
-The following project is build using Astro and the following packages that are used to build the following page.
+The following project is build using Astro and the following packages that are used to build the following page. The styling are built using [tailwindcss](https://tailwindcss.com/) and the components that are used is using [daisyui](https://daisyui.com/).
 ---
 ## Project Structure
+
 ```
 /
 ├── public/
@@ -86,4 +87,3 @@ Any static assets, like images, can be placed in the public/ directory.
 - [remark-toc] (https://www.npmjs.com/package/remark-toc)
 - [slugify] (https://www.npmjs.com/package/slugify)
 - [tailwindcss] (https://www.npmjs.com/package/tailwindcss)
-
