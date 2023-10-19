@@ -1,10 +1,10 @@
-import { defineConfig } from 'astro/config';
-import remarkToc from 'remark-toc';
+import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
-import remarkCollapse from 'remark-collapse';
-import react from '@astrojs/react';
+import { defineConfig } from 'astro/config';
 import compress from 'astro-compress';
+import remarkCollapse from 'remark-collapse';
+import remarkToc from 'remark-toc';
 
 // https://astro.build/config
 export default defineConfig({

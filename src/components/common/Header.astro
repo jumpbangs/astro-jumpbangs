@@ -14,10 +14,8 @@ const { toggleOff = false } = Astro.props;
   <nav class="navbar">
     <div class="flex-1">
       <a class="btn btn-ghost text-xl normal-case" href="/">
-        <div class="avatar">
-          <div class="mask mask-squircle w-8">
-            <img src="/favicon.svg" />
-          </div>
+        <div class="avatar text-zinc-100 dark:text-slate-100">
+          <span>Amit Chongbang</span>
         </div>
       </a>
     </div>
@@ -42,13 +40,6 @@ const { toggleOff = false } = Astro.props;
             href={SITE_ROUTES.about.url}>{SITE_ROUTES.about.name}</a
           >
         </li>
-        {
-          !toggleOff && (
-            <li>
-              <ToggleTheme />
-            </li>
-          )
-        }
       </ul>
     </div>
   </nav>
