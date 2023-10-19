@@ -14,14 +14,14 @@ const { toggleOff = false } = Astro.props;
   <nav class="navbar">
     <div class="flex-1">
       <a class="btn btn-ghost text-xl normal-case" href="/">
-        <div class="avatar text-zinc-100 dark:text-slate-100">
+        <div class="avatar text-slate-100">
           <span>Amit Chongbang</span>
         </div>
       </a>
     </div>
 
     <div class="flex-none gap-2">
-      <ul class="menu menu-horizontal px-1 text-zinc-100 dark:text-slate-100">
+      <ul class="menu menu-horizontal px-1 text-slate-100">
         <li>
           <a
             class={`px-2  ${checkIfCurrentPage('/projects') && 'btn-active'}`}

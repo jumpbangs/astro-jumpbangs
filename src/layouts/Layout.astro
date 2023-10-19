@@ -18,7 +18,8 @@ const { title } = Astro.props;
     <ColorMode />
     <title>{title}</title>
   </head>
-  <body class="bg-zinc-400 antialiased dark:bg-slate-800">
+  <!-- <body class="bg-zinc-400 antialiased dark:bg-slate-800"> -->
+  <body class="bg-slate-800 antialiased">
     {
       Astro.url.pathname === '/' ? (
         <slot />
