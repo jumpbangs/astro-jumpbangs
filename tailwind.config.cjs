@@ -7,12 +7,10 @@ module.exports = {
       sm: '576px',
       md: '960px',
       lg: '1440px',
-      // md: '640px',
-      // sm: '480px',
     },
     extend: {
       animation: {
-        marquee: 'marquee 10s linear infinite',
+        marquee: 'marquee 30s linear infinite',
       },
       keyframes: {
         marquee: {

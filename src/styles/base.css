@@ -75,3 +75,12 @@
   max-width: 100%;
   border-radius: 10px;
 }
+
+/* ============ flip hover styles ============ */
+.card-flip:hover {
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+}
+.card-back {
+  transform: rotateY(180deg);
+}

@@ -1,0 +1,37 @@
+---
+import Layout from 'layouts/Layout.astro';
+
+import Footer from 'components/common/Footer.astro';
+import Header from 'components/common/Header.astro';
+import ProjectCards from 'pages/projects/components/ProjectCards.astro';
+---
+
+<Layout title="My Projects 🛠️">
+  <Header />
+  <section class="p-2 text-slate-400">
+    <h1 class="text-3xl">My Projects</h1>
+    <div class="mb-10 mt-10">
+      <h2 class="text-justify text-xl">
+        Here are some of my projects, that I have worked on or am working on which I have have short
+        summary, tech stacks that are used and have linked to repoistory to the following projects.
+      </h2>
+    </div>
+
+    <div class="flex flex-col content-center items-center gap-10">
+      <ProjectCards
+        title="React-native-starter-kit"
+        description="A base starter kit for react native based application the following project doesnt use expo and uses react native navigation and redux."
+        techStack={['React Native', 'TypeScript', 'React Native Navigation', 'Redux']}
+        projectUrl="https://github.com/jumpbangs/react-native-starter-kit"
+      />
+
+      <ProjectCards
+        title="React-Typescript-Starter-Kit"
+        description="A base starter kit for react base application that uses typescript and react-router-dom for navigation."
+        techStack={['React', 'TypeScript', 'React-router-dom', 'Redux']}
+        projectUrl="https://github.com/jumpbangs/react-native-starter-kit"
+      />
+    </div>
+  </section>
+  <Footer />
+</Layout>

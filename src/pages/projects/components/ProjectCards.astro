@@ -1,0 +1,56 @@
+---
+export interface Props {
+  title?: string;
+  description: string;
+  projectUrl?: string;
+  techStack?: Array<string>;
+  newProject?: boolean;
+  projectImage?: string;
+}
+
+const { title, description, projectUrl, techStack, newProject, projectImage } = Astro.props;
+---
+
+<div
+  class="card-flip relative h-96 w-4/5 cursor-pointer overflow-hidden rounded-2xl text-white transition-all duration-700"
+>
+  <a href={projectUrl}>
+    <div
+      class="absolute inset-0 z-20 flex h-full w-full items-center justify-center bg-gray-900 transition-all delay-200 duration-100 hover:opacity-0"
+    >
+      <div class="card">
+        {
+          projectImage && (
+            <figure>
+              <img src={projectImage} alt={`${title}-pic`} />
+            </figure>
+          )
+        }
+
+        <div class="card-body">
+          <h2 class="card-title">
+            {title}
+            {newProject && <div class="badge badge-secondary">NEW</div>}
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div
+      class="card-back absolute inset-0 z-10 flex h-full w-full items-center justify-center bg-gray-900 transition-all"
+    >
+      <div class="card">
+        <div class="card-body">
+          <p>{description}</p>
+          <div class="card-actions justify-end">
+            {
+              techStack?.map(tech => {
+                console.log('LOL', tech);
+                return <div class="badge badge-outline">{tech}</div>;
+              })
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
