@@ -4,9 +4,27 @@ module.exports = {
   darkMode: 'class',
   theme: {
     screens: {
-      md: '640px',
+      sm: '576px',
+      md: '960px',
+      lg: '1440px',
+      // md: '640px',
+      // sm: '480px',
     },
-    extend: {},
+    extend: {
+      animation: {
+        marquee: 'marquee 10s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          from: {
+            transform: 'translateX(0)',
+          },
+          to: {
+            transform: 'translateX(calc(-100% - 2.5rem))',
+          },
+        },
+      },
+    },
   },
   daisyui: {
     themes: ['dark'],

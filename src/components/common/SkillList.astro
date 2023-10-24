@@ -1,0 +1,11 @@
+---
+interface Props {
+  skills: Array<string>;
+}
+
+const { skills } = Astro.props;
+---
+
+<>
+  {skills.map(skill => <span class="badge">{skill}</span>)}
+</>
