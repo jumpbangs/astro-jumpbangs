@@ -5,7 +5,7 @@ const devIcons = await Astro.glob('../assets/icons/*').then(files => {
 ---
 
 <ul class="pointer-events-none relative my-10 flex gap-10 overflow-hidden">
-  <div class="animate-marquee flex min-w-full shrink-0 items-center justify-around gap-10">
+  <div class="flex min-w-full shrink-0 animate-marquee items-center justify-around gap-10">
     {
       devIcons.map((icons, index) => (
         <img height="48" width="48" src={icons.src} alt={`icon-${index}`} />
@@ -14,7 +14,7 @@ const devIcons = await Astro.glob('../assets/icons/*').then(files => {
   </div>
   <div
     aria-hidden="true"
-    class="animate-marquee flex min-w-full shrink-0 items-center justify-around gap-10"
+    class="flex min-w-full shrink-0 animate-marquee items-center justify-around gap-10"
   >
     {
       devIcons.map((icons, index) => (

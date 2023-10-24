@@ -47,6 +47,7 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,md,mdx,json}": [
+      "eslint --ext .js,.ts.,tsx,.astro src",
       "prettier --plugin-search-dir=. --write",
       "astro build"
     ]
