@@ -67,12 +67,12 @@ Any static assets, like images, can be placed in the public/ directory.
 
 | Command                | Actions                                    |
 |------------------------|--------------------------------------------|
-| yarn                   | Installs dependencies                      |
-| yarn start             | Starts local dev server at `localhost:4321`|
-| yarn build             | Build your production site `./dist/`       |
-| yarn preview           | Preview your build locally, before deploy  |
-| yarn add <package>     | Install given package                      |
-| yarn astro --help      | Get help using the Astro CLI               |
+| bun                    | Installs dependencies                      |
+| bun run dev            | Starts local dev server at `localhost:4321`|
+| bun run build          | Build your production site `./dist/`       |
+| bun run preview        | Preview your build locally, before deploy  |
+| bun add <package>      | Install given package                      |
+| bun run astro --help   | Get help using the Astro CLI               |
 
 ---
 ## Package.json
