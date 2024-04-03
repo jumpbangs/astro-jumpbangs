@@ -1,99 +1,94 @@
 ---
+import { CheckIcon } from 'astro-feather';
+
 import SkillList from 'components/common/SkillList.astro';
 ---
 
 <div class="mt-4s flex flex-col gap-3">
-  <!-- Element Engeering -->
-  <div
-    class="card card-side border-2 border-slate-200/[.10] shadow-lg transition ease-in-out
-  hover:-translate-y-1 hover:scale-100 hover:cursor-pointer hover:shadow-[#94c123]"
-  >
-    <div class="flex flex-col md:flex-row">
-      <figure class="pt-8 text-slate-200 md:p-10">2023 - PRESENT</figure>
-      <div class="card-body rounded-box">
-        <h2 class="card-title">Software Engineer &#183; Element Engineering</h2>
-        <p>
-          Delievering quality and exploring into Test driven development using Typescript and React.
-          Use browser automation tools to test site and preformance. Implemented customer analytics
-          such as Woopra and Segment tools to collect and visualize customer data.
-        </p>
-        <div class="card-actions mt-2 justify-start">
-          <SkillList skills={['Typescript', 'React', 'Python', 'Docker']} />
+  <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+    <li>
+      <div class="timeline-middle py-2">
+        <CheckIcon />
+      </div>
+      <!-- Element Engineering -->
+      <div class="timeline-start md:text-end mb-10">
+        <time class="font-mono italic">2023 - PRESENT</time>
+        <h2 class="card-title text-[#94c123]">Software Engineer &#183; Element Engineering</h2>
+        <div class="px-2 py-4 rounded-box">
+          <p>
+            Delievering quality and exploring into Test driven development using Typescript and React.
+            Use browser automation tools to test site and preformance. 
+            Implemented customer analytics such as Woopra and Segment tools to collect and visualize customer data.
+            Working with Django Rest framework and React to create web applications.
+          </p>
+          <div class="card-actions mt-6 justify-end">
+            <SkillList skills={['Typescript', 'React', 'Python', 'Docker']} />
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- Webpoint -->
-  <div
-    class="card card-side border-2 border-slate-200/[.10] shadow-lg transition ease-in-out hover:-translate-y-1 hover:scale-100 hover:cursor-pointer hover:shadow-[#155aff]"
-  >
-    <div class="flex flex-col md:flex-row">
-      <figure class="pt-8 text-slate-200 md:p-10">2022 - 2023</figure>
-      <div class="card-body rounded-box">
-        <h2 class="card-title">Software Engineer &#183; Webpoint</h2>
-        <p>
-          Creating and updating websites to hybrid mobile applications. Converted client's
-          requirement and changes into actionable outcomes and optimization as well as implemented
-        </p>
-        <div class="card-actions mt-2 justify-start">
-          <SkillList skills={['Typescript', 'NextJS', 'React Native', 'Wordpress', 'Docker']} />
+      <hr/>
+    </li>
+    <li>
+      <hr />
+      <div class="timeline-middle py-2">
+        <CheckIcon />
+      </div>
+      <!-- Webpoint -->
+      <div class="timeline-end mb-10">
+        <time class="font-mono italic">2022 - 2023</time>
+        <h2 class="card-title text-[#155aff]">Software Engineer &#183; Webpoint</h2>
+        <div class="py-4 rounded-box">
+          <p>
+            Creating and updating websites to hybrid mobile applications. Converted client's
+            requirement and changes into actionable outcomes and optimization as well as implemented
+          </p>
+          <div class="card-actions mt-6 justify-start">
+            <SkillList skills={['Typescript', 'NextJS', 'React Native', 'Wordpress', 'Docker']} />
+          </div>
+        </div>
+     
+      </div>
+      <hr />
+    </li>
+    <li>
+      <hr />
+      <div class="timeline-middle py-2">
+        <CheckIcon />
+      </div>
+      <!-- Leapfrog -->
+      <div class="timeline-start md:text-end mb-10">
+        <time class="font-mono italic">2019 - 2022</time>
+        <h2 class="card-title text-[#1e8e43]">Software Engineer &#183; Leapfrog Technology</h2>
+        <div class="py-4 rounded-box">
+          <p>
+            Creating and updating websites to hybrid mobile applications. Converted client's
+            requirement and changes into actionable outcomes and optimization as well as implemented
+          </p>
+          <div class="card-actions mt-6 justify-end">
+            <SkillList skills={['Typescript','NextJS','React Native','Micronaut','Docker','Postgres','Firebase',]}/>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- Leapfrog -->
-  <div
-    class="card card-side border-2 border-slate-200/[.10] shadow-lg transition ease-in-out hover:-translate-y-1 hover:scale-100 hover:cursor-pointer hover:shadow-[#1e8e43]"
-  >
-    <div class="flex flex-col md:flex-row">
-      <figure class="pt-8 text-slate-200 md:p-10">2019 - 2022</figure>
-      <div class="card-body rounded-box">
-        <h2 class="card-title">
-          Software Engineer <span>&#183;</span>
-           Leapfrog Technology
-        </h2>
-        <p>
-          Creating and updating websites to hybrid mobile applications. Converted client's
-          requirement and changes into actionable outcomes and optimization as well as implemented
-        </p>
-        <div class="card-actions mt-2 justify-start">
-          <SkillList
-            skills={[
-              'Typescript',
-              'NextJS',
-              'React Native',
-              'Micronaut',
-              'Docker',
-              'Postgres',
-              'Firebase',
-            ]}
-          />
+      <hr />
+    </li>
+    <li>
+      <hr />
+      <div class="timeline-middle">
+        <CheckIcon />
+      </div>
+      <div class="timeline-end mb-10">
+        <time class="font-mono italic">2017 - 2019</time>
+        <h2 class="card-title text-[#4d02f0]">Web Developer &#183; Strong Digital</h2>
+        <div class="py-4 rounded-box">
+          <p>
+            Creating and updating websites to hybrid mobile applications. Converted client's
+            requirement and changes into actionable outcomes and optimization as well as implemented
+          </p>
+          <div class="card-actions mt-6 justify-start">
+            <SkillList skills={['React', 'PHP', 'Wordpress', 'React Native', 'Drupal']} />
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- Strong Digital -->
-  <div
-    class="card card-side border-2 border-slate-200/[.10] shadow-lg transition ease-in-out hover:-translate-y-1 hover:scale-100 hover:cursor-pointer hover:shadow-[#360ba8]"
-  >
-    <div class="flex flex-col md:flex-row">
-      <figure class="pt-8 text-slate-200 md:p-10">2017 - 2019</figure>
-      <div class="card-body rounded-box">
-        <h2 class="card-title">
-          Web Developer <span>&#183;</span>
-           Strong Digital
-        </h2>
-        <p>
-          Creating and updating websites to hybrid mobile applications. Converted client's
-          requirement and changes into actionable outcomes and optimization as well as implemented
-        </p>
-        <div class="card-actions mt-2 justify-start">
-          <SkillList skills={['React', 'PHP', 'Wordpress', 'React Native', 'Drupal']} />
-        </div>
-      </div>
-    </div>
-  </div>
+    </li>
+  </ul>
 </div>

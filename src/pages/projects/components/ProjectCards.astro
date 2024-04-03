@@ -1,5 +1,4 @@
 ---
-import { Link2Icon } from 'astro-feather';
 export interface Props {
   title?: string;
   description: string;
@@ -16,8 +15,8 @@ const { title, description, projectUrl, techStack, newProject, projectImage } = 
 <div class="card lg:card-side bg-base-100 shadow-xl">
   {
     projectImage && (
-      <figure>
-        <img src={projectImage} alt={`${title}-pic`} width="300px" />
+      <figure class="px-4">
+        <img src={projectImage} alt={`${title}-pic`} width="270px" />
       </figure>
     )
   }
