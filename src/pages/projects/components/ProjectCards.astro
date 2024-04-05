@@ -1,4 +1,5 @@
 ---
+import { Link2Icon } from 'astro-feather';
 export interface Props {
   title?: string;
   description: string;
@@ -12,7 +13,7 @@ const { title, description, projectUrl, techStack, newProject, projectImage } = 
 ---
 
 
-<div class="card lg:card-side bg-base-100 shadow-xl">
+<div class="card lg:card-side bg-base-200 shadow-xl p-4">
   {
     projectImage && (
       <figure class="px-4">
@@ -36,7 +37,10 @@ const { title, description, projectUrl, techStack, newProject, projectImage } = 
       }
       </div>
       <a href={projectUrl} target="_blank">
-        <button class="btn btn-primary">View</button>
+        <button class="btn btn-outline glass">
+          <Link2Icon />
+          View
+        </button>
       </a>
     </div>
   </div>

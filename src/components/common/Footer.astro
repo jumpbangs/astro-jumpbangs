@@ -5,17 +5,17 @@ import { SOCIAL_DATA } from 'utils/constants';
 
 <footer class="mt-4">
   <div class="mb-2 flex flex-row justify-center gap-4">
-    <a href={SOCIAL_DATA.github}>
-      <GithubIcon />
+    <a href={SOCIAL_DATA.github} aria-label="github">
+      <GithubIcon stroke='white'/>
     </a>
-    <a href={SOCIAL_DATA.linkedin}>
-      <LinkedinIcon />
+    <a href={SOCIAL_DATA.linkedin} aria-label="linkedin">
+      <LinkedinIcon stroke='white'/>
     </a>
-    <a href={`mailto:${SOCIAL_DATA.email}`}>
-      <MailIcon />
+    <a href={`mailto:${SOCIAL_DATA.email}`} aria-label="email">
+      <MailIcon stroke='white'/>
     </a>
-    <a href="/files/Resume.pdf" download="amitchongbang_resume.pdf">
-      <FileTextIcon />
+    <a href="/files/Resume.pdf" download="amitchongbang_resume.pdf" aria-label="resume">
+      <FileTextIcon stroke='white'/>
     </a>
   </div>
   <div class="text-center text-slate-100">
