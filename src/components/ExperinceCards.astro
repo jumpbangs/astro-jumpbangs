@@ -1,24 +1,31 @@
 ---
-import { CheckIcon } from 'astro-feather';
+import {
+  ArrowLeftCircleIcon,
+  ArrowRightCircleIcon,
+  CornerDownRightIcon,
+  CornerUpLeftIcon,
+  CornerUpRightIcon,
+} from 'astro-feather';
 
 import SkillList from 'components/common/SkillList.astro';
 ---
 
 <div class="mt-4s flex flex-col gap-3">
-  <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+  <ul class="timeline timeline-vertical timeline-snap-icon max-md:timeline-compact">
     <li>
       <div class="timeline-middle py-2">
-        <CheckIcon />
+        <CornerUpLeftIcon customClasses="hidden md:block" />
+        <CornerUpRightIcon customClasses="block md:hidden" />
       </div>
       <!-- Element Engineering -->
-      <div class="timeline-start md:text-end mb-10">
+      <div class="timeline-start mb-10 md:text-end">
         <time class="font-mono italic">2023 - PRESENT</time>
         <h2 class="card-title text-[#94c123]">Software Engineer &#183; Element Engineering</h2>
-        <div class="px-2 py-4 rounded-box">
+        <div class="rounded-box px-2 py-4">
           <p>
-            Delievering quality and exploring into Test driven development using Typescript and React.
-            Use browser automation tools to test site and preformance. 
-            Implemented customer analytics such as Woopra and Segment tools to collect and visualize customer data.
+            Delievering quality and exploring into Test driven development using Typescript and
+            React. Use browser automation tools to test site and preformance. Implemented customer
+            analytics such as Woopra and Segment tools to collect and visualize customer data.
             Working with Django Rest framework and React to create web applications.
           </p>
           <div class="card-actions mt-6 justify-end">
@@ -26,18 +33,18 @@ import SkillList from 'components/common/SkillList.astro';
           </div>
         </div>
       </div>
-      <hr/>
+      <hr />
     </li>
     <li>
       <hr />
       <div class="timeline-middle py-2">
-        <CheckIcon />
+        <ArrowRightCircleIcon />
       </div>
       <!-- Webpoint -->
       <div class="timeline-end mb-10">
         <time class="font-mono italic">2022 - 2023</time>
         <h2 class="card-title text-[#155aff]">Software Engineer &#183; Webpoint</h2>
-        <div class="py-4 rounded-box">
+        <div class="rounded-box py-4">
           <p>
             Creating and updating websites to hybrid mobile applications. Converted client's
             requirement and changes into actionable outcomes and optimization as well as implemented
@@ -46,26 +53,36 @@ import SkillList from 'components/common/SkillList.astro';
             <SkillList skills={['Typescript', 'NextJS', 'React Native', 'Wordpress', 'Docker']} />
           </div>
         </div>
-     
       </div>
       <hr />
     </li>
     <li>
       <hr />
       <div class="timeline-middle py-2">
-        <CheckIcon />
+        <ArrowLeftCircleIcon customClasses="hidden md:block" />
+        <ArrowRightCircleIcon customClasses="block md:hidden" />
       </div>
       <!-- Leapfrog -->
-      <div class="timeline-start md:text-end mb-10">
+      <div class="timeline-start mb-10 md:text-end">
         <time class="font-mono italic">2019 - 2022</time>
         <h2 class="card-title text-[#1e8e43]">Software Engineer &#183; Leapfrog Technology</h2>
-        <div class="py-4 rounded-box">
+        <div class="rounded-box py-4">
           <p>
             Creating and updating websites to hybrid mobile applications. Converted client's
             requirement and changes into actionable outcomes and optimization as well as implemented
           </p>
           <div class="card-actions mt-6 justify-end">
-            <SkillList skills={['Typescript','NextJS','React Native','Micronaut','Docker','Postgres','Firebase',]}/>
+            <SkillList
+              skills={[
+                'Typescript',
+                'NextJS',
+                'React Native',
+                'Micronaut',
+                'Docker',
+                'Postgres',
+                'Firebase',
+              ]}
+            />
           </div>
         </div>
       </div>
@@ -73,13 +90,13 @@ import SkillList from 'components/common/SkillList.astro';
     </li>
     <li>
       <hr />
-      <div class="timeline-middle">
-        <CheckIcon />
+      <div class="timeline-middle py-2">
+        <CornerDownRightIcon />
       </div>
       <div class="timeline-end mb-10">
         <time class="font-mono italic">2017 - 2019</time>
         <h2 class="card-title text-[#4d02f0]">Web Developer &#183; Strong Digital</h2>
-        <div class="py-4 rounded-box">
+        <div class="rounded-box py-4">
           <p>
             Creating and updating websites to hybrid mobile applications. Converted client's
             requirement and changes into actionable outcomes and optimization as well as implemented
