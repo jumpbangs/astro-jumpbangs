@@ -4,6 +4,7 @@ import Layout from 'layouts/Layout.astro';
 
 import Footer from 'components/common/Footer.astro';
 import Header from 'components/common/Header.astro';
+import PostCard from 'components/PostCard.astro';
 
 export interface Props {
   totalPages: number;
@@ -21,21 +22,21 @@ const { totalPages, postData, pageNumber } = Astro.props;
     <div class="my-7">
       {
         postData.map(post => (
-          <a href={`/posts/${post.slug}`}>
-            <div class="card my-8 w-full bg-base-100 shadow-xl">
-              <div class="card-body">
-                <h2 class="card-title">{post.data.title}</h2>
-                <p>{post.data.description}</p>
-              </div>
-            </div>
-          </a>
+          <>
+            <PostCard
+              slug={post.slug}
+              title={post.data.title}
+              description={post.data?.description}
+              tags={post.data.tags}
+            />
+          </>
         ))
       }
     </div>
 
     <div class="item-center flex justify-center">
       {
-        totalPages > 1 && (
+        totalPages > 5 && (
           <div class="join">
             {pageNumber > 1 && (
               <a href={`/posts${pageNumber - 1 !== 1 ? '/' + (pageNumber - 1) : ''}`}>

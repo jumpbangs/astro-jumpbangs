@@ -1,0 +1,30 @@
+---
+export interface Props {
+  slug: string;
+  title: string;
+  description: string | undefined;
+  tags: string[] | [];
+}
+
+const { slug, title, description, tags } = Astro.props;
+
+const postTags = tags.length > 0 ? tags.flatMap(value => value.split(',')) : 0;
+---
+
+<a href={`/posts/${slug}`}>
+  <div class="card my-8 w-full bg-base-100 shadow-xl">
+    <div class="card-body">
+      <h2 class="card-title">{title}</h2>
+      <p>{description}</p>
+      {
+        postTags != 0 && (
+          <div class="card-actions justify-end">
+            {postTags.map(tagValue => (
+              <div class="badge badge-outline">{tagValue}</div>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </div>
+</a>
