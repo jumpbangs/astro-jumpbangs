@@ -18,7 +18,10 @@ const { totalPages, postData, pageNumber } = Astro.props;
 <Layout title="Posts 📋">
   <Header />
   <section class="p-2">
-    <h1 class="text-3xl text-slate-400">All Posts</h1>
+    <div class="grid grid-cols-2 gap-4">
+      <h1 class="text-3xl text-slate-400">All Posts</h1>
+    </div>
+
     <div class="my-7">
       {
         postData.map(post => (
