@@ -3,6 +3,8 @@ import Layout from 'layouts/Layout.astro';
 
 import Footer from 'components/common/Footer.astro';
 import Header from 'components/common/Header.astro';
+import ExperinceCards from 'components/ExperinceCards.astro';
+import Marquee from 'components/Marquee.astro';
 ---
 
 <Layout title="Amit Chongbang 👨🏼‍💻">
@@ -10,17 +12,79 @@ import Header from 'components/common/Header.astro';
     <div class="container mx-auto w-full md:w-6/12">
       <Header toggleOff={true} />
     </div>
-    <div class="mt-[30vh] flex-1">
-      <div class="hero-content rounded bg-opacity-60 text-center">
-        <div class="max-w-md">
-          <h1 class="mb-5 text-5xl font-bold">Hello there 👋</h1>
-          <p class="mb-5">I am a full stack developer based in Perth.</p>
-          <p class="mb-5">I create websites and mobile-based applications.</p>
+    <div class="min-h-screen flex-1">
+      <div class="mt-[30vh]">
+        <div class="hero-content rounded bg-opacity-60 text-center">
+          <div class="max-w-md">
+            <h1 class="mb-5 text-5xl font-bold">Hello there 👋</h1>
+            <p class="mb-5">I am a full stack developer based in Perth.</p>
+            <p class="mb-5">I create websites and mobile-based applications.</p>
+          </div>
         </div>
       </div>
     </div>
-    <div class="container mx-auto">
-      <Footer />
-    </div>
+  </div>
+
+  <!-- Introduction -->
+  <div class="container mx-auto min-h-screen w-2/3 snap-start gap-5 md:w-6/12" data-aos="fade-up">
+    <h1 class="text-3xl" data-aos="zoom-in">👋 Hi I am Amit Chongbang</h1>
+    <section class="my-4 flex flex-col text-lg" data-aos="slide-right">
+      <p class="my-4">
+        I'm a software developer from Perth, Australia, specializing in web, backend, and mobile app
+        development. Passionate about crafting high-quality applications, I bring a blend of
+        creative and technical expertise to every project.
+      </p>
+      <p class="my-4">
+        I aim to solve problems using my expertise while continually expanding my knowledge by
+        building web applications with diverse tech stacks.
+      </p>
+    </section>
+  </div>
+
+  <!-- Experiences -->
+  <div class="container mx-auto min-h-screen w-2/3 snap-start md:w-6/12" data-aos="fade-up">
+    <section class="my-2" data-aos="fade-up">
+      <h2 class="my-4 flex text-2xl">Experiences</h2>
+      <ExperinceCards />
+    </section>
+
+    <section class="my-2">
+      <Marquee data-aos="zoom-in" />
+    </section>
+  </div>
+
+  <!-- <div class="container mx-auto my-10 w-2/3 snap-start md:w-6/12" data-aos="fade-up">
+    <section class="my-4" data-aos="fade-right">
+      <h2 class="my-4 text-2xl">Interests</h2>
+      <p>
+        As a software engineer, my passions extend beyond the digital realm into the tangible world
+        of electronics, mechanical work, camping, and hiking. In programming, I find the creative
+        challenge of problem-solving exhilarating, constantly seeking elegant solutions to complex
+        problems. Exploring the intricacies of electronics allows me to understand the inner
+        workings of technology, from circuit design to microcontroller programming, bridging the gap
+        between software and hardware.
+      </p>
+      <br />
+      <p>
+        Engaging in mechanical work fuels my curiosity for how things function, from tinkering with
+        engines to crafting intricate mechanisms. When I'm not immersed in code or engineering
+        projects, you'll often find me amidst nature, seeking solace in the tranquility of the
+        wilderness through camping trips and invigorating hikes, where every trail offers a new
+        adventure and perspective.
+      </p>
+    </section>
+  </div> -->
+
+  <div class="container mx-auto">
+    <Footer />
   </div>
 </Layout>
+
+<script>
+  import AOS from 'aos';
+
+  AOS.init({
+    duration: 3000, // Animation duration in milliseconds
+    once: true, // Whether animation should happen only once
+  });
+</script>

@@ -32,12 +32,6 @@ const checkIfCurrentPage = (url: string) => {
             href={SITE_ROUTES.blog.url}>{SITE_ROUTES.blog.name}</a
           >
         </li>
-        <li>
-          <a
-            class={`px-2 ${checkIfCurrentPage('/about') && 'btn-active'}`}
-            href={SITE_ROUTES.about.url}>{SITE_ROUTES.about.name}</a
-          >
-        </li>
       </ul>
     </div>
   </nav>

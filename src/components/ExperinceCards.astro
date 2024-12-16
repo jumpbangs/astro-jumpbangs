@@ -18,7 +18,7 @@ import SkillList from 'components/common/SkillList.astro';
         <CornerUpRightIcon customClasses="block md:hidden" />
       </div>
       <!-- Element Engineering -->
-      <div class="timeline-start mb-10 md:text-end">
+      <div class="timeline-start mb-10 md:text-end" data-aos="fade-right">
         <time class="font-mono italic">2023 - PRESENT</time>
         <h2 class="card-title text-[#94c123]">Software Engineer &#183; Element Engineering</h2>
         <div class="rounded-box px-2 py-4">
@@ -29,13 +29,14 @@ import SkillList from 'components/common/SkillList.astro';
             Working with Django Rest framework and React to create web applications.
           </p>
           <div class="card-actions mt-6 justify-end">
-            <SkillList skills={['Typescript', 'React', 'Python', 'Docker']} />
+            <SkillList skills={['Typescript', 'React', 'Python', 'Docker', 'Nextjs', 'Django']} />
           </div>
         </div>
       </div>
       <hr />
     </li>
-    <li>
+
+    <li data-aos="fade-left">
       <hr />
       <div class="timeline-middle py-2">
         <ArrowRightCircleIcon />
@@ -56,7 +57,7 @@ import SkillList from 'components/common/SkillList.astro';
       </div>
       <hr />
     </li>
-    <li>
+    <li data-aos="fade-right">
       <hr />
       <div class="timeline-middle py-2">
         <ArrowLeftCircleIcon customClasses="hidden md:block" />
@@ -88,11 +89,13 @@ import SkillList from 'components/common/SkillList.astro';
       </div>
       <hr />
     </li>
-    <li>
+
+    <li data-aos="fade-left">
       <hr />
       <div class="timeline-middle py-2">
         <CornerDownRightIcon />
       </div>
+      <!-- Strong Digital -->
       <div class="timeline-end mb-10">
         <time class="font-mono italic">2017 - 2019</time>
         <h2 class="card-title text-[#4d02f0]">Web Developer &#183; Strong Digital</h2>
