@@ -1,14 +1,23 @@
 ---
-const devIcons = await Astro.glob('../assets/icons/*').then(files => {
-  return files.map(file => file.default);
-});
+type IconModule = {
+  default: {
+    src: string;
+    width: number;
+    height: number;
+    format: string;
+  };
+};
+
+const devIcons = Object.values(
+  import.meta.glob('../assets/icons/*', { eager: true }) as Record<string, IconModule>
+);
 ---
 
 <ul class="pointer-events-none relative my-10 flex gap-10 overflow-hidden">
   <div class="flex min-w-full shrink-0 animate-marquee items-center justify-around gap-10">
     {
       devIcons.map((icons, index) => (
-        <img height="48" width="48" src={icons.src} alt={`icon-${index}`} />
+        <img height="48" width="48" src={icons.default.src} alt={`icon-${index}`} loading="lazy" />
       ))
     }
   </div>
@@ -18,7 +27,7 @@ const devIcons = await Astro.glob('../assets/icons/*').then(files => {
   >
     {
       devIcons.map((icons, index) => (
-        <img height="48" width="48" src={icons.src} alt={`icon-${index}`} />
+        <img height="48" width="48" src={icons.default.src} alt={`icon-${index}`} loading="lazy" />
       ))
     }
   </div>

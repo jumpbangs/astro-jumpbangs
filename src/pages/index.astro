@@ -1,8 +1,11 @@
 ---
+import { FileTextIcon, GithubIcon, LinkedinIcon, MailIcon } from 'astro-feather';
 import Layout from 'layouts/Layout.astro';
+import { SOCIAL_DATA } from 'utils/constants';
 
 import Footer from 'components/common/Footer.astro';
 import Header from 'components/common/Header.astro';
+import MailingForm from 'components/ContactForm';
 import ExperinceCards from 'components/ExperinceCards.astro';
 import Marquee from 'components/Marquee.astro';
 ---
@@ -16,9 +19,9 @@ import Marquee from 'components/Marquee.astro';
       <div class="mt-[30vh]">
         <div class="hero-content rounded bg-opacity-60 text-center">
           <div class="max-w-md">
-            <h1 class="mb-5 text-5xl font-bold">Hello there 👋</h1>
+            <h1 class="mb-5 text-5xl font-bold">Hello there. 👋</h1>
             <p class="mb-5">I am a full stack developer based in Perth.</p>
-            <p class="mb-5">I create websites and mobile-based applications.</p>
+            <p class="mb-5">I build websites and mobile-based applications.</p>
           </div>
         </div>
       </div>
@@ -27,7 +30,7 @@ import Marquee from 'components/Marquee.astro';
 
   <!-- Introduction -->
   <div class="container mx-auto min-h-screen w-2/3 snap-start gap-5 md:w-6/12" data-aos="fade-up">
-    <h1 class="text-3xl" data-aos="zoom-in">👋 Hi I am Amit Chongbang</h1>
+    <h2 class="text-5xl font-bold" data-aos="zoom-in">about me.</h2>
     <section class="my-4 flex flex-col text-lg" data-aos="slide-right">
       <p class="my-4">
         I'm a software developer from Perth, Australia, specializing in web, backend, and mobile app
@@ -44,7 +47,7 @@ import Marquee from 'components/Marquee.astro';
   <!-- Experiences -->
   <div class="container mx-auto min-h-screen w-2/3 snap-start md:w-6/12" data-aos="fade-up">
     <section class="my-2" data-aos="fade-up">
-      <h2 class="my-4 flex text-2xl">Experiences</h2>
+      <h2 class="my-4 flex text-5xl font-bold">experiences.</h2>
       <ExperinceCards />
     </section>
 
@@ -74,6 +77,37 @@ import Marquee from 'components/Marquee.astro';
       </p>
     </section>
   </div> -->
+
+  <div class="hero min-h-screen text-white">
+    <div class="min-h-screen flex-1">
+      <div class="mt-[30vh]">
+        <div class="hero-content rounded bg-opacity-60 text-center">
+          <div class="grid grid-rows-1 md:grid-cols-8">
+            <div class="col-span-4">
+              <h1 class="mb-5 text-5xl font-bold">contact.</h1>
+              <div class="mb-2 flex flex-row justify-center gap-4">
+                <a href={SOCIAL_DATA.github} aria-label="github">
+                  <GithubIcon stroke="white" />
+                </a>
+                <a href={SOCIAL_DATA.linkedin} aria-label="linkedin">
+                  <LinkedinIcon stroke="white" />
+                </a>
+                <a href={`mailto:${SOCIAL_DATA.email}`} aria-label="email">
+                  <MailIcon stroke="white" />
+                </a>
+                <a href="/files/Resume.pdf" download="amitchongbang_resume.pdf" aria-label="resume">
+                  <FileTextIcon stroke="white" />
+                </a>
+              </div>
+            </div>
+            <div class="col-span-4">
+              <MailingForm client:load />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="container mx-auto">
     <Footer />
