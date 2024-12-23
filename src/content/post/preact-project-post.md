@@ -1,0 +1,298 @@
+---
+author: Amit Chongbang
+pubDate: 2024-12-23T05:55:43Z
+title: Preact Project Setup
+postSlug: preact-project-setup
+featured: true
+ogImage: https://user-images.githubusercontent.com/53733092/215771435-25408246-2309-4f8b-a781-1f3d93bdf0ec.png
+tags:
+  - preact, setup
+description: In this guide, you'll learn how to quickly set up a modern, high-performance Preact project using Vite, a next-generation build tool designed for speed. Preact is a lightweight alternative to React that offers similar functionality with a smaller footprint, making it ideal for projects where performance is crucial.
+---
+
+# Introduction
+
+In this guide, you'll learn how to quickly set up a modern, high-performance Preact project using Vite, a next-generation build tool designed for speed. Preact is a lightweight alternative to React that offers similar functionality with a smaller footprint, making it ideal for projects where performance is crucial.
+
+With Vite's fast build times and efficient hot module replacement (HMR), you'll be able to develop and deploy your Preact application with ease. This tutorial covers everything from installing the necessary dependencies to configuring Vite for optimal performance, allowing you to focus on building your app rather than wrestling with configuration files.
+
+By the end of this guide, you'll have a fully functional Preact application, ready for development, testing, and deployment, with all the benefits of Vite’s cutting-edge toolchain. Whether you're building a simple static site or a complex web app, this setup ensures a smooth and efficient development process.
+
+## Setup and initialize project
+
+First, install Vite and initialize your project:
+
+   ```bash
+   bun create vite {my-preact-app}
+   cd my-preact-app
+   ```
+
+1. These are the following options when running `bun create vite project-name`, select the chosen framework and variant of choice for the following project.
+
+   ```bash
+   ? Select a framework: › - Use arrow-keys. Return to submit.
+   ❯   Vanilla
+       Vue
+       React
+       Preact
+       Lit
+       Svelte
+       Solid
+       Qwik
+       Angular
+       Others
+   ---
+   ? Select a variant: › - Use arrow-keys. Return to submit.
+   ❯   TypeScript
+       JavaScript
+       Customize with create-preact ↗
+   ---
+   Scaffolding project in /Users/amit.chongbang/Projects/github/project-name...
+   
+   Done. Now run:
+   
+     cd project-name
+     bun install
+     bun run dev
+   ```
+
+2. If you have chosen Preact as the framework, the following would be better as it will install the required dependencies and it is more optimized for Preact.
+
+   ```bash
+   bun create preact
+   ```
+
+3. The following above process should setup the following project with the chosen framework and variant. Now adding `Tailwind CSS` in the following project.
+
+   1. Install  **Tailwind CSS**:
+
+   ```bash
+   bun add -D tailwindcss postcss autoprefixer
+   npx tailwindcss init
+   ```
+
+   2. Configure **Tailwind**, by updating the `tailwind.config.js` to scan your Preact files:
+
+   ```js
+   module.exports = {
+     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+     theme: {
+       extend: {},
+     },
+     plugins: [],
+   };
+   ```
+
+   3. Add **Tailwind CSS** to **CSS**: include the following in your `src/index.css`
+
+   ```css
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+   ```
+
+   4. Add Tailwind to your PostCSS configuration, create a file `posts.config.js` and add the following:
+
+   ```js
+   module.exports = {
+     plugins: {
+       tailwindcss: {},
+       autoprefixer: {},
+     }
+   }
+   ```
+
+4. Adding **daisyUI (OPTIONAL)**, the following is tailwind based component which is optional:
+
+   1. Install **daisyui**
+
+   ```bash
+   bun add -D daisyui@latest
+   ```
+
+   2. Add the following configure in your `tailwind.config.js`
+
+   ```js
+   import daisyui from "daisyui"
+   module.exports = {
+     //...
+     plugins: [
+       daisyui,
+     ],
+   }
+   ```
+
+   3. There is more customization and configuration for **Tailwind CSS** at the following site: https://daisyui.com/docs/config/
+
+5. Adding **eslint**  and **prettier** in the following project:
+
+   1. Install **Prettier** and **ESLint** along with the related plugins for Preact:
+
+   ```bash
+   bun add -D prettier eslint eslint-plugin-prettier eslint-config-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y eslint-plugin-import eslint-plugin-simple-import-sort
+   ```
+
+   2. Add the following if the project is **Typescript** based:
+
+   ```bash
+   bun add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
+   ```
+
+   3. Run the following command to generate a eslint config file
+
+   ```bash
+   bunx eslint --init .
+   ```
+
+   4. These are the choices given after running the following command:
+
+   ```bash
+   ? How would you like to use ESLint? …
+     To check syntax only
+   ❯ To check syntax and find problems
+   ---
+   ? What type of modules does your project use? …
+   ❯ JavaScript modules (import/export)
+     CommonJS (require/exports)
+     None of these
+   ---
+   ? Which framework does your project use? …
+   ❯ React
+     Vue.js
+     None of these
+   ---
+   ? Does your project use TypeScript? …
+     No
+   ❯ Yes
+   ---
+   ? Where does your code run? …  (Press <space> to select, <a> to toggle all, <i> to invert selection)
+   ✔ Browser
+   ✔ Node
+   ---
+   The config that you've selected requires the following dependencies:
+   
+   eslint, globals, @eslint/js, typescript-eslint
+   ? Would you like to install them now? › No / Yes
+   ---
+   ? Which package manager do you want to use? …
+     npm
+     yarn
+     pnpm
+   ❯ bun
+   ---
+   ```
+
+   The following command will create a eslint config file and this my eslint configuration:
+
+   ```js
+   import pluginJs from '@eslint/js';
+   import simpleImportSort from 'eslint-plugin-simple-import-sort';
+   import globals from 'globals';
+   import tseslint from 'typescript-eslint';
+   
+   /** @type {import('eslint').Linter.Config[]} */
+   export default [
+   	{ files: ['**/*.{js,mjs,cjs,ts}'] },
+   	{ languageOptions: { globals: globals.browser } },
+   	pluginJs.configs.recommended,
+   	...tseslint.configs.recommended,
+   	{
+   		plugins: {
+   			'simple-import-sort': simpleImportSort,
+   		},
+   		rules: {
+   			'no-unused-vars': 'error',
+   			'no-undef': 'error',
+   			'no-console': 'error',
+   			'no-shadow': 'off',
+   			'no-duplicate-imports': 'error',
+   			'no-var': 'error',
+   			'no-useless-catch': 'warn',
+   			'no-nested-ternary': 'warn',
+   			'prefer-arrow-callback': 'warn',
+   			'no-restricted-syntax': [
+   				'error',
+   				'FunctionExpression',
+   				'FunctionDeclaration',
+   			],
+   			'padding-line-between-statements': [
+   				'error',
+   				{ blankLine: 'always', prev: 'function', next: 'function' },
+   				{ blankLine: 'always', prev: 'function', next: 'block' },
+   				{ blankLine: 'always', prev: 'block', next: 'function' },
+   			],
+   			'comma-dangle': [2, 'always-multiline'],
+   			'func-style': ['error', 'declaration', { allowArrowFunctions: true }],
+   			'simple-import-sort/exports': 'error',
+   			'simple-import-sort/imports': [
+   				'error',
+   				{
+   					groups: [
+   						// Packages `react` related packages come first.
+   						['^react', '^@?\\w'],
+   						// Mui packages
+   						// ['^@mui'],
+   						// Internal packages.
+   						[
+   							'^(@|components|services|pages|features|common|utils|routes|types)(/.*|$)',
+   						],
+   						// Internal packages.
+   						['^()(/.*|$)'],
+   						// Side effect imports.
+   						['^\\u0000'],
+   						// Parent imports. Put `..` last.
+   						['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+   						// Other relative imports. Put same-folder imports and `.` last.
+   						['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+   						// Style imports.
+   						['^.+\\.?(css)$'],
+   					],
+   				},
+   			],
+   		},
+   	},
+   ];
+   ```
+
+6. Update the following file `tsconfig.json` file with the following line:
+
+   ```json
+   {
+   	....,
+   	"include": ["node_modules/vite/client.d.ts", "**/*"],
+   	"exclude": ["./eslint.config.js"]
+   }
+   ```
+
+7. Configure. Prettier, create a `.prettierrc` file and add the following configuration:
+
+   ```json
+   {
+     "semi": true,
+     "singleQuote": true,
+     "jsxSingleQuote": true,
+     "trailingComma": "es5",
+     "printWidth": 80,
+     "tabWidth": 2
+   }
+   ```
+
+   as well create a `.prettierignore` file to exclude specific files or directories:
+
+   ```json
+   node_modules/
+   dist/
+   ```
+
+8. Update your package.json file by adding the following scripts:
+
+   ```json
+   "scripts": {
+     ...,
+     "lint": "eslint . --fix",
+     "format": "prettier --write ."
+   }
+   ```
+
+
+<!-- ![Alt text](/images/merida.big.nine.jpg) -->

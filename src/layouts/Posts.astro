@@ -15,7 +15,7 @@ export interface Props {
 const { totalPages, postData, pageNumber } = Astro.props;
 ---
 
-<Layout title="Posts 📋">
+<Layout title="Blog Posts 📋">
   <Header />
   <section class="p-2">
     <div class="grid grid-cols-2 gap-4">
@@ -39,7 +39,7 @@ const { totalPages, postData, pageNumber } = Astro.props;
 
     <div class="item-center flex justify-center">
       {
-        totalPages > 5 && (
+        totalPages > 1 && (
           <div class="join">
             {pageNumber > 1 && (
               <a href={`/posts${pageNumber - 1 !== 1 ? '/' + (pageNumber - 1) : ''}`}>

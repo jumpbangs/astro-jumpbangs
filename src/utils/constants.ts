@@ -1,4 +1,4 @@
-export const MAX_BLOG_COUNT = 4;
+export const MAX_BLOG_COUNT = 5;
 
 export const SITE_ROUTES = {
   about: { url: '/about', name: 'About' },
