@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface CodeMockupProps {
   code: string[];
   toggleLineNumber?: boolean;

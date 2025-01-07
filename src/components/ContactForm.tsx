@@ -27,6 +27,7 @@ const ContactForm = () => {
   });
   const [hasSubmitted, setHasSubmitted] = React.useState(false);
 
+  // eslint-disable-next-line unused-imports/no-unused-vars
   const onSubmit = (data: FormInput) => {
     setHasSubmitted(true);
     // console.log(data);
