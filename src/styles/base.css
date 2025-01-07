@@ -84,3 +84,9 @@
 .card-back {
   transform: rotateY(180deg);
 }
+
+.astro-code {
+  padding: 16px;
+  margin: 10px 0px 10px;
+  border-radius: 8px;
+}

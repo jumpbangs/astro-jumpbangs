@@ -1,3 +1,4 @@
+import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
@@ -8,7 +9,7 @@ import remarkToc from 'remark-toc';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), sitemap(), react(), compress()],
+  integrations: [tailwind(), sitemap(), react(), compress(), mdx()],
   markdown: {
     remarkPlugins: [
       remarkToc,
@@ -19,6 +20,10 @@ export default defineConfig({
         },
       ],
     ],
+    shikiConfig: {
+      theme: 'ayu-dark',
+      wrap: true,
+    },
     extendDefaultPlugins: true,
   },
 });

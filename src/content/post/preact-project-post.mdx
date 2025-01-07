@@ -10,6 +10,8 @@ tags:
 description: In this guide, you'll learn how to quickly set up a modern, high-performance Preact project using Vite, a next-generation build tool designed for speed. Preact is a lightweight alternative to React that offers similar functionality with a smaller footprint, making it ideal for projects where performance is crucial.
 ---
 
+import { CodeMockup } from 'components/mdx/mdxUtils.tsx';
+
 # Introduction
 
 In this guide, you'll learn how to quickly set up a modern, high-performance Preact project using Vite, a next-generation build tool designed for speed. Preact is a lightweight alternative to React that offers similar functionality with a smaller footprint, making it ideal for projects where performance is crucial.
@@ -22,10 +24,10 @@ By the end of this guide, you'll have a fully functional Preact application, rea
 
 First, install Vite and initialize your project:
 
-   ```bash
-   bun create vite {my-preact-app}
-   cd my-preact-app
-   ```
+```bash
+bun create vite {my-preact-app}
+cd my-preact-app
+```
 
 1. These are the following options when running `bun create vite project-name`, select the chosen framework and variant of choice for the following project.
 
@@ -48,9 +50,9 @@ First, install Vite and initialize your project:
        Customize with create-preact ↗
    ---
    Scaffolding project in /Users/amit.chongbang/Projects/github/project-name...
-   
+
    Done. Now run:
-   
+
      cd project-name
      bun install
      bun run dev
@@ -64,7 +66,7 @@ First, install Vite and initialize your project:
 
 3. The following above process should setup the following project with the chosen framework and variant. Now adding `Tailwind CSS` in the following project.
 
-   1. Install  **Tailwind CSS**:
+   1. Install **Tailwind CSS**:
 
    ```bash
    bun add -D tailwindcss postcss autoprefixer
@@ -75,7 +77,7 @@ First, install Vite and initialize your project:
 
    ```js
    module.exports = {
-     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+     content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
      theme: {
        extend: {},
      },
@@ -98,8 +100,8 @@ First, install Vite and initialize your project:
      plugins: {
        tailwindcss: {},
        autoprefixer: {},
-     }
-   }
+     },
+   };
    ```
 
 4. Adding **daisyUI (OPTIONAL)**, the following is tailwind based component which is optional:
@@ -113,18 +115,16 @@ First, install Vite and initialize your project:
    2. Add the following configure in your `tailwind.config.js`
 
    ```js
-   import daisyui from "daisyui"
+   import daisyui from 'daisyui';
    module.exports = {
      //...
-     plugins: [
-       daisyui,
-     ],
-   }
+     plugins: [daisyui],
+   };
    ```
 
    3. There is more customization and configuration for **Tailwind CSS** at the following site: https://daisyui.com/docs/config/
 
-5. Adding **eslint**  and **prettier** in the following project:
+5. Adding **eslint** and **prettier** in the following project:
 
    1. Install **Prettier** and **ESLint** along with the related plugins for Preact:
 
@@ -170,7 +170,7 @@ First, install Vite and initialize your project:
    ✔ Node
    ---
    The config that you've selected requires the following dependencies:
-   
+
    eslint, globals, @eslint/js, typescript-eslint
    ? Would you like to install them now? › No / Yes
    ---
@@ -189,68 +189,62 @@ First, install Vite and initialize your project:
    import simpleImportSort from 'eslint-plugin-simple-import-sort';
    import globals from 'globals';
    import tseslint from 'typescript-eslint';
-   
+
    /** @type {import('eslint').Linter.Config[]} */
    export default [
-   	{ files: ['**/*.{js,mjs,cjs,ts}'] },
-   	{ languageOptions: { globals: globals.browser } },
-   	pluginJs.configs.recommended,
-   	...tseslint.configs.recommended,
-   	{
-   		plugins: {
-   			'simple-import-sort': simpleImportSort,
-   		},
-   		rules: {
-   			'no-unused-vars': 'error',
-   			'no-undef': 'error',
-   			'no-console': 'error',
-   			'no-shadow': 'off',
-   			'no-duplicate-imports': 'error',
-   			'no-var': 'error',
-   			'no-useless-catch': 'warn',
-   			'no-nested-ternary': 'warn',
-   			'prefer-arrow-callback': 'warn',
-   			'no-restricted-syntax': [
-   				'error',
-   				'FunctionExpression',
-   				'FunctionDeclaration',
-   			],
-   			'padding-line-between-statements': [
-   				'error',
-   				{ blankLine: 'always', prev: 'function', next: 'function' },
-   				{ blankLine: 'always', prev: 'function', next: 'block' },
-   				{ blankLine: 'always', prev: 'block', next: 'function' },
-   			],
-   			'comma-dangle': [2, 'always-multiline'],
-   			'func-style': ['error', 'declaration', { allowArrowFunctions: true }],
-   			'simple-import-sort/exports': 'error',
-   			'simple-import-sort/imports': [
-   				'error',
-   				{
-   					groups: [
-   						// Packages `react` related packages come first.
-   						['^react', '^@?\\w'],
-   						// Mui packages
-   						// ['^@mui'],
-   						// Internal packages.
-   						[
-   							'^(@|components|services|pages|features|common|utils|routes|types)(/.*|$)',
-   						],
-   						// Internal packages.
-   						['^()(/.*|$)'],
-   						// Side effect imports.
-   						['^\\u0000'],
-   						// Parent imports. Put `..` last.
-   						['^\\.\\.(?!/?$)', '^\\.\\./?$'],
-   						// Other relative imports. Put same-folder imports and `.` last.
-   						['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
-   						// Style imports.
-   						['^.+\\.?(css)$'],
-   					],
-   				},
-   			],
-   		},
-   	},
+     { files: ['**/*.{js,mjs,cjs,ts}'] },
+     { languageOptions: { globals: globals.browser } },
+     pluginJs.configs.recommended,
+     ...tseslint.configs.recommended,
+     {
+       plugins: {
+         'simple-import-sort': simpleImportSort,
+       },
+       rules: {
+         'no-unused-vars': 'error',
+         'no-undef': 'error',
+         'no-console': 'error',
+         'no-shadow': 'off',
+         'no-duplicate-imports': 'error',
+         'no-var': 'error',
+         'no-useless-catch': 'warn',
+         'no-nested-ternary': 'warn',
+         'prefer-arrow-callback': 'warn',
+         'no-restricted-syntax': ['error', 'FunctionExpression', 'FunctionDeclaration'],
+         'padding-line-between-statements': [
+           'error',
+           { blankLine: 'always', prev: 'function', next: 'function' },
+           { blankLine: 'always', prev: 'function', next: 'block' },
+           { blankLine: 'always', prev: 'block', next: 'function' },
+         ],
+         'comma-dangle': [2, 'always-multiline'],
+         'func-style': ['error', 'declaration', { allowArrowFunctions: true }],
+         'simple-import-sort/exports': 'error',
+         'simple-import-sort/imports': [
+           'error',
+           {
+             groups: [
+               // Packages `react` related packages come first.
+               ['^react', '^@?\\w'],
+               // Mui packages
+               // ['^@mui'],
+               // Internal packages.
+               ['^(@|components|services|pages|features|common|utils|routes|types)(/.*|$)'],
+               // Internal packages.
+               ['^()(/.*|$)'],
+               // Side effect imports.
+               ['^\\u0000'],
+               // Parent imports. Put `..` last.
+               ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+               // Other relative imports. Put same-folder imports and `.` last.
+               ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+               // Style imports.
+               ['^.+\\.?(css)$'],
+             ],
+           },
+         ],
+       },
+     },
    ];
    ```
 
@@ -293,6 +287,3 @@ First, install Vite and initialize your project:
      "format": "prettier --write ."
    }
    ```
-
-
-<!-- ![Alt text](/images/merida.big.nine.jpg) -->
