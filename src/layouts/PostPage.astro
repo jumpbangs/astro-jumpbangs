@@ -15,15 +15,17 @@ const { Content } = await post.render();
 
 <Layout title={title}>
   <Header />
-  <Breadcrumbs />
-  <h1 class="text-3xl text-slate-200">{title}</h1>
-  <DateTime dateTime={pubDate} />
-  <section class="text-slate-200">
-    <article class="article-section mx-auto mt-2">
-      <Content />
-    </article>
-  </section>
+  <div class="px-4">
+    <Breadcrumbs />
+    <h1 class="text-3xl text-slate-200">{title}</h1>
+    <DateTime dateTime={pubDate} />
+    <section class="px-2 text-slate-200">
+      <article class="article-section mx-auto mt-2">
+        <Content />
+      </article>
+    </section>
 
-  <Tags tags={tags} />
+    <Tags tags={tags} />
+  </div>
   <Footer />
 </Layout>
