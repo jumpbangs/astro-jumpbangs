@@ -10,6 +10,53 @@ tags:
 description: A quick guide on how to setup husky for your project.
 ---
 
-# Up and running Husky
+# Up and running Husky 🐶
 
-:feet:
+A quick guide on how to install, setup and run husky. What is husky ? It is a pre-git hook command that
+runs linting, test and building on your project upon committing and pushing.
+
+1. **Install husky**
+   ```bash
+   bun add --dev husky
+   ```
+2. **Init husky**
+   ```bash
+   bunx husky init
+   ```
+3. **Update `scripts` in package.json**
+   ```json
+   {
+   ...,
+   "scripts":{
+       ...,
+       "lint-staged": "lint-staged"
+       }
+   }
+   ```
+4. **Add the following script code to `package.json` file**
+
+   ```json
+   "scripts": {
+       ...,
+   },
+   "dependencies": {
+       ...,
+   },
+   "devDependencies": {
+       ...,
+   },
+   "lint-staged": {
+       "**/*.{js,jsx,ts,tsx,json}": [
+       "eslint --ext .js,.ts.,tsx,.astro src",
+       "prettier --plugin-search-dir=. --write",
+       "astro build"
+       ]
+   },
+   ```
+
+5. **Update the `pre-commit` file located in `.husky` folder**
+   ```bash
+   bunx lint-staged
+   ```
+
+Once everything is setup, you can test it once you have `git add` and `git commit`. The following `lint-staged` script will check your files, prettify and build your project before readying your project for push.
