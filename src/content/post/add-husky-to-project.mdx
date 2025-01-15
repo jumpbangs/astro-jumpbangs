@@ -1,19 +1,20 @@
 ---
 author: Amit Chongbang
 pubDate: 2025-01-14T07:50:34Z
-title: Guide to adding Husky 🐶
+title: Up and running Husky 🐶
 postSlug: husky-setup-project
 featured: true
 ogImage: https://user-images.githubusercontent.com/53733092/215771435-25408246-2309-4f8b-a781-1f3d93bdf0ec.png
 tags:
   - preact, husky, git
-description: A quick guide on how to setup husky for your project.
+description: A quick guide on how to setup and running husky. A simple and powerful pre-commit git hook that runs after committing and before pushing the code to user's choice of version control platform.
 ---
 
-# Up and running Husky 🐶
+# Setting up and running husky
 
-A quick guide on how to install, setup and run husky. What is husky ? It is a pre-git hook command that
-runs linting, test and building on your project upon committing and pushing.
+A quick guide on how to install, setup and run husky. What is husky ? It is a pre-commit git hook command that
+runs linting, test and building on your project upon committing and pushing. The following example is done using
+`bun` but it can be done using `npm` or any other javascript package manager.
 
 1. **Install husky**
    ```bash
@@ -59,4 +60,5 @@ runs linting, test and building on your project upon committing and pushing.
    bunx lint-staged
    ```
 
-Once everything is setup, you can test it once you have `git add` and `git commit`. The following `lint-staged` script will check your files, prettify and build your project before readying your project for push.
+Once everything is setup, you can test it once you have `git add` and `git commit`.
+The following `lint-staged` script will check your files, prettify and build your project before readying your project for push.

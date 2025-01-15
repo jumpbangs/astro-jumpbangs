@@ -11,10 +11,9 @@ const { tags, size = 'sm' } = Astro.props;
   {
     tags.map(tag => (
       <li
-        class={`inline-block ${
+        class={`inline-block pr-1 ${
           size === 'sm' ? 'my-1 underline-offset-4' : 'mx-1 my-3 underline-offset-8'
-        }`}
-      >
+        }`}>
         <a class={`${size === 'sm' ? 'text-sm' : 'text-lg'} group badge badge-lg`}>{tag}</a>
       </li>
     ))
