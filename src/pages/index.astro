@@ -53,13 +53,12 @@ import Marquee from 'components/Marquee.astro';
         <h2 class="my-4 flex text-5xl font-bold">experiences.</h2>
         <ExperinceCards />
       </section>
-
-      <section class="my-2">
-        <Marquee data-aos="zoom-in" />
-      </section>
     </div>
   </div>
 
+  <div class="flex h-auto flex-auto justify-center">
+    <Marquee data-aos="zoom-in" />
+  </div>
   <!-- <div class="container mx-auto my-10 w-2/3 snap-start md:w-6/12" data-aos="fade-up">
     <section class="my-4" data-aos="fade-right">
       <h2 class="my-4 text-2xl">Interests</h2>
@@ -82,14 +81,14 @@ import Marquee from 'components/Marquee.astro';
     </section>
   </div> -->
 
-  <div class="hero mx-auto flex min-h-screen text-white">
+  <div class="hero mx-auto flex min-h-screen flex-col text-white">
     <div class="min-h-screen flex-1">
       <div class="mt-[30vh]">
         <div class="hero-content rounded bg-opacity-60 text-center">
           <div class="grid grid-rows-1 md:grid-cols-8">
             <div class="col-span-4">
               <h1 class="mb-5 text-5xl font-bold">contact.</h1>
-              <div class="mb-2 flex flex-row justify-center gap-4">
+              <div class="mb-2 flex flex-row justify-center gap-4 pb-10">
                 <a href={SOCIAL_DATA.github} aria-label="github">
                   <GithubIcon stroke="white" />
                 </a>

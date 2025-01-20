@@ -13,22 +13,49 @@ const devIcons = Object.values(
 );
 ---
 
-<ul class="pointer-events-none relative my-10 flex gap-10 overflow-hidden">
-  <div class="flex min-w-full shrink-0 animate-marquee items-center justify-around gap-10">
-    {
-      devIcons.map((icons, index) => (
-        <img height="48" width="48" src={icons.default.src} alt={`icon-${index}`} loading="lazy" />
-      ))
-    }
-  </div>
+<div class="relative my-10 overflow-hidden">
+  <!-- Fading effect on the left -->
   <div
-    aria-hidden="true"
-    class="flex min-w-full shrink-0 animate-marquee items-center justify-around gap-10"
+    class="pointer-events-none absolute left-0 top-0 z-10 h-full min-w-full bg-gradient-to-r from-slate-600 via-slate-900/0 lg:w-1/2"
   >
-    {
-      devIcons.map((icons, index) => (
-        <img height="48" width="48" src={icons.default.src} alt={`icon-${index}`} loading="lazy" />
-      ))
-    }
   </div>
-</ul>
+
+  <!-- Fading effect on the right -->
+  <div
+    class="pointer-events-none absolute right-0 top-0 z-10 h-full min-w-full bg-gradient-to-l from-slate-600 via-slate-900/0 lg:w-1/2"
+  >
+  </div>
+
+  <!-- Scrolling content -->
+  <ul class="relative flex gap-10 overflow-hidden">
+    <div class="flex min-w-full shrink-0 animate-marquee items-center justify-around gap-10">
+      {
+        devIcons.map((icons, index) => (
+          <img
+            height="78"
+            width="78"
+            src={icons.default.src}
+            alt={`icon-${index}`}
+            loading="lazy"
+          />
+        ))
+      }
+    </div>
+    <div
+      aria-hidden="true"
+      class="flex min-w-full shrink-0 animate-marquee items-center justify-around gap-10"
+    >
+      {
+        devIcons.map((icons, index) => (
+          <img
+            height="78"
+            width="78"
+            src={icons.default.src}
+            alt={`icon-${index}`}
+            loading="lazy"
+          />
+        ))
+      }
+    </div>
+  </ul>
+</div>
