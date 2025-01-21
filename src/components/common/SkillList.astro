@@ -4,8 +4,10 @@ interface Props {
 }
 
 const { skills } = Astro.props;
+
+const skillBadgeClass = 'text-md badge badge-outline border-amber-400 p-4 text-white lg:text-lg';
 ---
 
 <>
-  {skills.map(skill => <span class="badge badge-outline text-white">{skill}</span>)}
+  {skills.map(skill => <span class={skillBadgeClass}>{skill}</span>)}
 </>

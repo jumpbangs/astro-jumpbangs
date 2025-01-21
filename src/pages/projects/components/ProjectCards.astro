@@ -12,30 +12,36 @@ export interface Props {
 const { title, description, projectUrl, techStack, newProject, projectImage } = Astro.props;
 ---
 
-<div class="card bg-base-200 p-4 shadow-xl lg:card-side">
+<div class="card w-11/12 border-2 border-amber-400 bg-base-200 p-4 shadow-xl lg:card-side">
   {
     projectImage && (
       <figure class="px-4">
-        <img src={projectImage} alt={`${title}-pic`} width="270px" />
+        <img
+          src={projectImage}
+          alt={`${title}-pic`}
+          loading="lazy"
+          decoding="async"
+          style="height: 100%; width: 100%; object-fit: cover;"
+        />
       </figure>
     )
   }
   <div class="card-body">
-    <h2 class="card-title">
+    <h2 class="card-title text-2xl">
       {title}
       {newProject?.length && <div class="badge badge-primary">{newProject}</div>}
     </h2>
-    <p>{description}</p>
+    <p class="text-lg">{description}</p>
     <div class="card-actions flex flex-col justify-evenly">
       <div>
         {
           techStack?.map(tech => {
-            return <div class="badge badge-outline mr-1">{tech}</div>;
+            return <div class="text-md badge badge-outline mr-1 p-4 lg:text-lg">{tech}</div>;
           })
         }
       </div>
       <a href={projectUrl} target="_blank">
-        <button class="btn glass btn-outline">
+        <button class="btn glass btn-outline text-xl">
           <Link2Icon />
           View
         </button>

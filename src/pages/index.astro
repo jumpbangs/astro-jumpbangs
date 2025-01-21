@@ -20,8 +20,8 @@ import Marquee from 'components/Marquee.astro';
         <div class="hero-content rounded bg-opacity-60 text-center">
           <div class="max-w-md">
             <h1 class="mb-5 text-5xl font-bold">Hello there. 👋</h1>
-            <p class="mb-5">I am a full stack developer based in Perth.</p>
-            <p class="mb-5">I build websites and mobile-based applications.</p>
+            <p class="mb-5 text-xl">I am a full stack developer based in Perth.</p>
+            <p class="mb-5 text-xl">I build websites and mobile-based applications.</p>
           </div>
         </div>
       </div>
@@ -31,12 +31,12 @@ import Marquee from 'components/Marquee.astro';
   <!-- Introduction -->
   <div class="container mx-auto min-h-screen w-2/3 snap-start gap-5 md:w-6/12">
     <div data-aos="fade-up">
-      <h2 class="text-5xl font-bold" data-aos="zoom-in">about me.</h2>
+      <h2 class="text-5xl font-bold" data-aos="zoom-in">about me. 👨🏻‍💻</h2>
       <section class="my-4 flex flex-col text-lg" data-aos="slide-right">
-        <p class="my-4">
-          I'm a software developer from Perth, Australia, specializing in web, backend, and mobile
-          app development. Passionate about crafting high-quality applications, I bring a blend of
-          creative and technical expertise to every project.
+        <p class="my-4 text-2xl">
+          I'm a software developer based in Perth, Australia, specializing in web, backend, and
+          mobile app development. Passionate about crafting high-quality applications, I bring a
+          blend of creative and technical expertise to every project.
         </p>
         <p class="my-4">
           I aim to solve problems using my expertise while continually expanding my knowledge by
@@ -47,10 +47,10 @@ import Marquee from 'components/Marquee.astro';
   </div>
 
   <!-- Experiences -->
-  <div class="container min-h-screen snap-start sm:mx-auto md:w-6/12">
+  <div class="container mx-auto min-h-screen snap-start overflow-hidden lg:w-6/12">
     <div data-aos="fade-up" class="p-8">
       <section class="my-2" data-aos="fade-up">
-        <h2 class="my-4 flex text-5xl font-bold">experiences.</h2>
+        <h2 class="my-4 flex text-5xl font-bold">experiences. ⌨️</h2>
         <ExperinceCards />
       </section>
     </div>
@@ -121,7 +121,7 @@ import Marquee from 'components/Marquee.astro';
   import AOS from 'aos';
 
   AOS.init({
-    duration: 3000, // Animation duration in milliseconds
+    duration: 1000, // Animation duration in milliseconds
     once: true, // Whether animation should happen only once
   });
 </script>

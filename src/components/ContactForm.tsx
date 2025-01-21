@@ -44,7 +44,7 @@ const ContactForm = () => {
             render={({ field }) => (
               <input
                 id="name"
-                className="input input-bordered w-72 lg:w-96"
+                className="input input-bordered w-72 border-amber-400 text-xl lg:w-96"
                 placeholder="Name"
                 {...field}
               />
@@ -64,7 +64,7 @@ const ContactForm = () => {
             control={control}
             render={({ field }) => (
               <input
-                className="input input-bordered w-72 lg:w-96"
+                className="input input-bordered w-72 border-amber-400 text-xl lg:w-96"
                 placeholder="Email"
                 id="email"
                 {...field}
@@ -83,7 +83,7 @@ const ContactForm = () => {
           control={control}
           render={({ field }) => (
             <textarea
-              className="textarea textarea-bordered textarea-lg mt-4 w-full gap-4 lg:w-96"
+              className="textarea textarea-bordered textarea-lg  mt-4 w-full gap-4 border-amber-400 text-xl lg:w-96"
               placeholder="Message"
               {...field}
             />
@@ -96,7 +96,7 @@ const ContactForm = () => {
         )}
 
         <div className="mt-8 flex justify-end">
-          <button type="submit" className="border-eea-green btn border text-white">
+          <button type="submit" className="btn border border-amber-400 text-xl text-white">
             {hasSubmitted ? `Thank you` : `Submit`}
           </button>
         </div>
