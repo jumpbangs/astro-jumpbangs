@@ -1,15 +1,16 @@
 ---
-import { Link2Icon } from 'astro-feather';
+import { GithubIcon, MonitorIcon } from 'astro-feather';
 export interface Props {
   title?: string;
   description: string;
-  projectUrl?: string;
+  repoUrl?: string;
+  siteUrl?: string;
   techStack?: Array<string>;
   newProject?: string;
   projectImage?: string;
 }
 
-const { title, description, projectUrl, techStack, newProject, projectImage } = Astro.props;
+const { title, description, repoUrl, siteUrl, techStack, newProject, projectImage } = Astro.props;
 ---
 
 <div class="card w-11/12 border-2 border-amber-400 bg-base-200 p-4 shadow-xl lg:card-side">
@@ -40,12 +41,28 @@ const { title, description, projectUrl, techStack, newProject, projectImage } = 
           })
         }
       </div>
-      <a href={projectUrl} target="_blank">
-        <button class="btn glass btn-outline text-xl">
-          <Link2Icon />
-          View
-        </button>
-      </a>
+      <div class="mt-4 flex flex-row gap-2">
+        {
+          repoUrl && (
+            <a href={repoUrl} target="_blank">
+              <button class="btn glass btn-outline text-xl">
+                View
+                <GithubIcon />
+              </button>
+            </a>
+          )
+        }
+        {
+          siteUrl && (
+            <a href={siteUrl} target="_blank">
+              <button class="btn glass btn-outline text-xl">
+                View
+                <MonitorIcon />
+              </button>
+            </a>
+          )
+        }
+      </div>
     </div>
   </div>
 </div>
