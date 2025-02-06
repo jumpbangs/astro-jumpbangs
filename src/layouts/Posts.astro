@@ -26,9 +26,10 @@ const { totalPages, postData, pageNumber } = Astro.props;
 
     <div class="my-7">
       {
-        postData.map(post => (
+        postData.map((post, index) => (
           <>
             <PostCard
+              postIndex={index + 1}
               slug={post.slug}
               title={post.data.title}
               description={post.data?.description}

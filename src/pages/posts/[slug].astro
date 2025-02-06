@@ -37,7 +37,7 @@ const currentPage =
 const lastPost = currentPage * MAX_BLOG_COUNT;
 const startPost = lastPost - MAX_BLOG_COUNT;
 
-const paginatedPosts = sortedPosts.slice(startPost, lastPost);
+const paginatedPosts = sortedPosts.slice(lastPost, startPost);
 ---
 
 {

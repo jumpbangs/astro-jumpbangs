@@ -4,9 +4,10 @@ export interface Props {
   title: string;
   description: string | undefined;
   tags: string[] | [];
+  postIndex: any;
 }
 
-const { slug, title, description, tags } = Astro.props;
+const { slug, title, description, tags, postIndex } = Astro.props;
 
 const postTags = tags.length > 0 ? tags.flatMap(value => value.split(',')) : 0;
 ---
@@ -14,7 +15,10 @@ const postTags = tags.length > 0 ? tags.flatMap(value => value.split(',')) : 0;
 <a href={`/posts/${slug}`}>
   <div class="card my-8 w-full border-2 border-amber-400 bg-base-100 shadow-xl">
     <div class="card-body">
-      <h2 class="card-title">{title}</h2>
+      <h2 class="card-title">
+        {title}
+        {postIndex === 1 && <div class="badge badge-secondary">NEW</div>}
+      </h2>
       <p>{description}</p>
       {
         postTags != 0 && (

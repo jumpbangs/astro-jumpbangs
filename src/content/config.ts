@@ -10,6 +10,7 @@ const post = defineCollection({
     tags: z.array(z.string()).default(['others']),
     heroImg: z.string().optional(),
     description: z.string().optional(),
+    postImages: z.string().optional(),
   }),
 });
 
