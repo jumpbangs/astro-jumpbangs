@@ -7,18 +7,31 @@ featured: true
 ogImage: https://user-images.githubusercontent.com/53733092/215771435-25408246-2309-4f8b-a781-1f3d93bdf0ec.png
 tags:
   - preact, setup
-description: In this guide, you'll learn how to quickly set up a modern, high-performance Preact project using Vite, a next-generation build tool designed for speed. Preact is a lightweight alternative to React that offers similar functionality with a smaller footprint, making it ideal for projects where performance is crucial.
+description:
+  In this guide, you'll learn how to quickly set up a modern, high-performance Preact project using
+  Vite, a next-generation build tool designed for speed. Preact is a lightweight alternative to
+  React that offers similar functionality with a smaller footprint, making it ideal for projects
+  where performance is crucial.
 ---
 
 import { CodeMockup } from 'components/mdx/mdxUtils.tsx';
 
 # Introduction
 
-In this guide, you'll learn how to quickly set up a modern, high-performance Preact project using Vite, a next-generation build tool designed for speed. Preact is a lightweight alternative to React that offers similar functionality with a smaller footprint, making it ideal for projects where performance is crucial.
+In this guide, you'll learn how to quickly set up a modern, high-performance Preact project using
+Vite, a next-generation build tool designed for speed. Preact is a lightweight alternative to React
+that offers similar functionality with a smaller footprint, making it ideal for projects where
+performance is crucial.
 
-With Vite's fast build times and efficient hot module replacement (HMR), you'll be able to develop and deploy your Preact application with ease. This tutorial covers everything from installing the necessary dependencies to configuring Vite for optimal performance, allowing you to focus on building your app rather than wrestling with configuration files.
+With Vite's fast build times and efficient hot module replacement (HMR), you'll be able to develop
+and deploy your Preact application with ease. This tutorial covers everything from installing the
+necessary dependencies to configuring Vite for optimal performance, allowing you to focus on
+building your app rather than wrestling with configuration files.
 
-By the end of this guide, you'll have a fully functional Preact application, ready for development, testing, and deployment, with all the benefits of Vite’s cutting-edge toolchain. Whether you're building a simple static site or a complex web app, this setup ensures a smooth and efficient development process.
+By the end of this guide, you'll have a fully functional Preact application, ready for development,
+testing, and deployment, with all the benefits of Vite’s cutting-edge toolchain. Whether you're
+building a simple static site or a complex web app, this setup ensures a smooth and efficient
+development process.
 
 ## Setup and initialize project
 
@@ -29,7 +42,8 @@ bun create vite {my-preact-app}
 cd my-preact-app
 ```
 
-1. These are the following options when running `bun create vite project-name`, select the chosen framework and variant of choice for the following project.
+1. These are the following options when running `bun create vite project-name`, select the chosen
+   framework and variant of choice for the following project.
 
    ```bash
    ? Select a framework: › - Use arrow-keys. Return to submit.
@@ -58,13 +72,15 @@ cd my-preact-app
      bun run dev
    ```
 
-2. If you have chosen Preact as the framework, the following would be better as it will install the required dependencies and it is more optimized for Preact.
+2. If you have chosen Preact as the framework, the following would be better as it will install the
+   required dependencies and it is more optimized for Preact.
 
    ```bash
    bun create preact
    ```
 
-3. The following above process should setup the following project with the chosen framework and variant. Now adding `Tailwind CSS` in the following project.
+3. The following above process should setup the following project with the chosen framework and
+   variant. Now adding `Tailwind CSS` in the following project.
 
    1. Install **Tailwind CSS**:
 
@@ -93,7 +109,8 @@ cd my-preact-app
    @tailwind utilities;
    ```
 
-   4. Add Tailwind to your PostCSS configuration, create a file `posts.config.js` and add the following:
+   4. Add Tailwind to your PostCSS configuration, create a file `posts.config.js` and add the
+      following:
 
    ```js
    module.exports = {
@@ -122,7 +139,8 @@ cd my-preact-app
    };
    ```
 
-   3. There is more customization and configuration for **Tailwind CSS** at the following site: https://daisyui.com/docs/config/
+   3. There is more customization and configuration for **Tailwind CSS** at the following site:
+      https://daisyui.com/docs/config/
 
 5. Adding **eslint** and **prettier** in the following project:
 
