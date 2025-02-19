@@ -61,7 +61,7 @@
     "**/*.{js,jsx,ts,tsx,json}": [
       "eslint --ext .js,.ts.,tsx,.astro src",
       "prettier --plugin-search-dir=. --write",
-      "astro build"
+      "bun run build"
     ]
   },
   "browserslist": {

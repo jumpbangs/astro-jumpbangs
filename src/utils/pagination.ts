@@ -1,8 +1,9 @@
 import type { CollectionEntry } from 'astro:content';
 import slugify from 'slugify';
+import { MAX_BLOG_COUNT } from 'utils/constants';
 
 export const getPageNumbers = (numberOfPosts: number) => {
-  const numberOfPages = numberOfPosts / 3;
+  const numberOfPages = numberOfPosts / MAX_BLOG_COUNT;
 
   let pageNumbers: number[] = [];
   for (let i = 1; i <= Math.ceil(numberOfPages); i++) {
