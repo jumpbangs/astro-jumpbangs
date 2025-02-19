@@ -9,7 +9,7 @@ export interface Props {
 
 const { slug, title, description, tags, postIndex } = Astro.props;
 
-const postTags = tags.length > 0 ? tags.flatMap(value => value.split(',')) : 0;
+const postTags = tags?.length > 0 ? tags.flatMap(value => value.split(',')) : 0;
 ---
 
 <a href={`/posts/${slug}`}>

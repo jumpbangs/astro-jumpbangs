@@ -1,0 +1,82 @@
+---
+author: Amit Chongbang
+pubDate: 2025-02-19T04:50:03Z
+title: Starting React Native Development with Expo (without EAS) 📱
+postSlug: react-native-development-with-expo
+featured: true
+ogImage: https://user-images.githubusercontent.com/53733092/215771435-25408246-2309-4f8b-a781-1f3d93bdf0ec.png
+tags:
+  - react-native, expo, development
+description:
+  The guide provides a step-by-step process to start developing React Native applications using the
+  Expo framework, without using EAS (Expo Application Services). It lists the requirements for
+  setting up the environment, such as Node, Android Studio, and Xcode. The guide demonstrates how to
+  install and set up the development environment, including selecting 'Development build' and
+  unchecking the option for Build with Expo Application Services. The guide also provides additional
+  tips on using commands like npx expo start, npx expo prebuild, and npx expo run:android/run:ios to
+  compile and run the applications.
+---
+
+# Starting React Native Development with Expo (without EAS) 📱
+
+This guide serves as a reference to start development using React Native with the Expo framework. As
+a react developer, I had started developing react native applications using the react-native CLI.
+However, over the years, the following react-native CLI tool has not been supported and there are
+other Frameworks that support react-native development. One such framework is the Expo framework.
+This guide will showcase the steps required to build and run a bare React Native application using
+the expo framework.
+
+Requirements:
+
+- NodeJS
+- Android Studio (Android development) 🤖
+- Xcode (iOS development) 🍎
+
+To install NodeJS, there are options to download an installer for the given operating system.
+However, it is recommended to use NVM(Node version Manager) to help install, uninstall, and switch
+nodejs versions as needed. There are steps and methods to install NodeJS on the given page. Once
+Nodejs has been installed, run the following command:
+
+```bash
+npx create-expo-app@latest
+
+bunx create expo my-app
+```
+
+To set up the development environment for Android or iOS or both, there is a detailed explanation on
+the installation process to install Android Studio and Xcode at the given page. However, this guide
+selects the option of using 'Development build' and unchecks the option for
+`Build with Expo Application Services (EAS)` as we would want the development and build process to
+be done locally instead of running on EAS. There is an option to build/run the application on a real
+device or emulator/simulator for development and testing purposes.
+
+Once the environment has been set up, run the following command:
+
+```bash
+npx expo run:android/run:ios
+
+bunx expo run:android/run:ios
+```
+
+The following command should run the project on the chosen platform on the choice of device or
+emulator/simulator.
+
+Next step of the project is to remove the boilerplate generated when running
+`npx create-expo-app@latest| bun create expo my-app` command to create a new Expo application.
+
+```bash
+npm run reset-project
+
+bun run reset-project
+```
+
+Additional Tips:
+
+| Command                         | Description                                                                                                                              |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `npx expo start`                | Starts the development server (whether you are using a development build or Expo Go)                                                     |
+| `npx expo prebuild`             | Generates native Android and iOS directories using 'Prebuild', rebuilds the file directories by adding `--clean` option to this command. |
+| `npx expo run:android`          | Compiles native Android app locally.                                                                                                     |
+| `npx expo run:ios`              | Compiles native iOS app locally.                                                                                                         |
+| `npx expo install pacakge-name` | Used to install a new library or validate and update specific libraries in your project by adding `--fix` option to this command.        |
+| `npx expo lint`                 | Setups and configures ESLint. If ESLint is already configured, this command will lint your project files.                                |

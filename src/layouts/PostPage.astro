@@ -10,7 +10,7 @@ const { post } = Astro.props;
 
 const { title, tags, pubDate } = post.data;
 
-const tagList = tags.length > 0 ? tags[0].split(',') : [];
+const tagList = tags?.length > 0 ? tags[0].split(',') : [];
 const { Content } = await post.render();
 ---
 

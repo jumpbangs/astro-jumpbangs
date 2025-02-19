@@ -15,7 +15,7 @@ breadcrumbList[0] === 'posts' &&
     <li><a href=`/${parentPage}`>{parentPage}</a></li>
     {
       breadcrumbList.map((breadcrumb, index) =>
-        index + 1 === breadcrumbList.length ? (
+        index + 1 === breadcrumbList?.length ? (
           <li>
             <a aria-current="page">
               {/* make the last part lowercase in Home > Tags > some-tag */}
