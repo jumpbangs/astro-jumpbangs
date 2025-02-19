@@ -1,6 +1,7 @@
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
+import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import { defineConfig } from 'astro/config';
 import compress from 'astro-compress';
@@ -9,7 +10,15 @@ import remarkToc from 'remark-toc';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), sitemap(), react(), compress(), mdx()],
+  site: 'https://www.amitchongbang.com.np/',
+  integrations: [
+    tailwind(),
+    sitemap(),
+    react(),
+    compress(),
+    mdx(),
+    sitemap({ changefreq: 'weekly', priority: 0.7 }),
+  ],
   markdown: {
     remarkPlugins: [
       remarkToc,
