@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.amitchongbang.com.np/sitemap-index.xml
