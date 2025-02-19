@@ -18,7 +18,7 @@ export const getStaticPaths = (async () => {
     props: { post },
   }));
 
-  const postPaths = getPageNumbers(posts.length).map(pageNum => ({
+  const postPaths = getPageNumbers(posts?.length).map(pageNum => ({
     params: { slug: `${pageNum}` },
   }));
 
@@ -30,7 +30,7 @@ const { slug } = Astro.params;
 
 const posts = await getCollection('post');
 const sortedPosts = getSortedPosts(posts);
-const totalPages = getPageNumbers(sortedPosts.length);
+const totalPages = getPageNumbers(sortedPosts?.length);
 const currentPage =
   slug && !isNaN(Number(slug)) && totalPages.includes(Number(slug)) ? Number(slug) : 0;
 
@@ -44,6 +44,6 @@ const paginatedPosts = sortedPosts.slice(lastPost, startPost);
   post ? (
     <PostPage post={post} />
   ) : (
-    <Posts postData={paginatedPosts} totalPages={totalPages.length} pageNumber={currentPage} />
+    <Posts postData={paginatedPosts} totalPages={totalPages?.length} pageNumber={currentPage} />
   )
 }
