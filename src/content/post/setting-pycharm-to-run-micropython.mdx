@@ -16,8 +16,6 @@ description:
   should start blinking, indicating that the code is running.
 ---
 
-export const postImages = '../images/pycharm-micropython';
-
 # Setting PyCharm to run micropython
 
 This guide is designed to help you start developing MicroPython for the Raspberry Pi Pico W in
@@ -29,7 +27,7 @@ Pack**, it can still serve as a helpful starting point for anyone looking to con
 work with MicroPython on any microcontroller board. This guide may be particularly useful for those
 who get lost while setting up their environment.
 
-![pico-inky](../images/pycharm-micropython/pico-inky.webp)
+![pico-inky](/public/images/pycharm-micropython/pico-inky.webp)
 
 ### Installing micropython file in pico w
 
@@ -44,7 +42,7 @@ While the process for uploading MicroPython firmware can vary across different b
 W, simply hold down the `BOOTSEL` button and plug the board into your laptop or desktop to initiate
 the upload process.
 
-![pico-device-screenshot](../images/pycharm-micropython/rpi-pico.webp)
+![pico-device-screenshot](/public/images/pycharm-micropython/rpi-pico.webp)
 
 Once you have the Pico W connected, it should appear as a USB device named `RPI2`. Open the device,
 and then drag and drop the appropriate MicroPython firmware into the folder. After the firmware is
@@ -100,28 +98,28 @@ on Pycharm will be done on the next section.
 
 Open up Pycharm and there should be **Plugins** option on the left-hand side of application.
 
-![pycharm-plugin-img](../images/pycharm-micropython/pycharm-plugin.webp)
+![pycharm-plugin-img](/public/images/pycharm-micropython/pycharm-plugin.webp)
 
 Select the following option and search for **Micropython Tools** in the search box and click on the
 `Install` to install the following plugin in Pycharm.
 
-![micropython-tool](../images/pycharm-micropython/micropython-tool.webp)
+![micropython-tool](/public/images/pycharm-micropython/micropython-tool.webp)
 
 Create a new Project, select **Pure Python** and select the interpreter type of your choice, for my
 configuration I have a preference of using a custom environment select create once your are happy
 with everything.
 
-![project-settings](../images/pycharm-micropython/project-settings.webp)
+![project-settings](/public/images/pycharm-micropython/project-settings.webp)
 
 Once pycharm opens, open the settings menu which is located under the `PyCharm -> Settings` option.
 
-![project-settings](../images/pycharm-micropython/pycharm-settings.webp)
+![project-settings](/public/images/pycharm-micropython/pycharm-settings.webp)
 
 Navigate to `Languages & Frameworks` and select `Micropython Tools` and check on
 `Enable Micropython Tools`. If your device is connected, select on the dropdown option of **port**
 and select your board.
 
-![screenshot-of-selected-port](../images/pycharm-micropython/settings-configs.webp)
+![screenshot-of-selected-port](/public/images/pycharm-micropython/settings-configs.webp)
 
 MicroPython stubs are a tool that aids in autocompletion and static type checking for your chosen
 development board. You can learn more about it on the following
@@ -148,14 +146,14 @@ To upload the `main.py` file, you'll need to set up a configuration. Start by se
 `Current File` option at the top of the PyCharm window. Then, click on `Edit Configurations`,
 followed by `Add New Configuration`.
 
-![screenshot-of-configuration](../images/pycharm-micropython/run-config-settings.webp)
+![screenshot-of-configuration](/public/images/pycharm-micropython/run-config-settings.webp)
 
 You should see an option for `MicroPython tools`. Select this option, and it will appear in the
 configuration settings. You can specify the file path of your choice, but I’ve kept the default
 settings for my setup and selected `Switch to REPL tab on success`. The `REPL` tab will display any
 errors that occur when the build or upload fails due to issues in your code.
 
-![screenshot-of-configuration](../images/pycharm-micropython/set-run-config.webp)
+![screenshot-of-configuration](/public/images/pycharm-micropython/set-run-config.webp)
 
 **EDIT** The synchronize option should also be selected to prevent pushing of old files and just
 push the changes that is done to the device, else the device will complain about not having enough
