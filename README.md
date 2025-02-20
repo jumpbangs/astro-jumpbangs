@@ -51,6 +51,7 @@ The following project is build using Astro and the following packages that are u
 └── astro.config.mjs
 └── prettier.config.cjs
 └── README.md
+└── remark-reading-time.mjs
 └── tailwind.config.cjs
 └── tsconfig.json
 └── package.json

@@ -8,6 +8,8 @@ import compress from 'astro-compress';
 import remarkCollapse from 'remark-collapse';
 import remarkToc from 'remark-toc';
 
+import { remarkReadingTime } from './remark-reading-time.mjs';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.amitchongbang.com.np/',
@@ -28,6 +30,7 @@ export default defineConfig({
           test: 'Table of contents',
         },
       ],
+      remarkReadingTime,
     ],
     shikiConfig: {
       theme: 'ayu-dark',
