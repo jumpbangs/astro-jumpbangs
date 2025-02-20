@@ -1,12 +1,13 @@
 ---
-import { CalendarIcon } from 'astro-feather';
+import { BookOpenIcon, CalendarIcon } from 'astro-feather';
 import { formatDate, formatTime } from 'utils/date';
 
 export interface Props {
   dateTime: string | Date;
+  readingTime: string | '';
 }
 
-const { dateTime } = Astro.props;
+const { dateTime, readingTime } = Astro.props;
 ---
 
 <div class="mt-4 flex flex-row gap-1 text-slate-300">
@@ -16,3 +17,4 @@ const { dateTime } = Astro.props;
     <span>{formatDate(dateTime)}</span> | <span>{formatTime(dateTime)}</span>
   </div>
 </div>
+<div class="mt-4 flex flex-row gap-1"><BookOpenIcon /> : {readingTime}</div>
