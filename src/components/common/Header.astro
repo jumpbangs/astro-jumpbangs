@@ -11,8 +11,8 @@ const checkIfCurrentPage = (url: string) => {
 <header>
   <nav class="navbar mt-4">
     <div class="flex-1">
-      <a class="btn btn-ghost text-xl normal-case lg:text-3xl" href="/">
-        <div class="avatar text-white hover:text-amber-400">
+      <a class="btn btn-ghost rounded-full text-xl normal-case lg:text-3xl" href="/">
+        <div class="avatar hover:cursor text-white hover:text-amber-400">
           <span>Amit Chongbang</span>
         </div>
       </a>
@@ -22,7 +22,7 @@ const checkIfCurrentPage = (url: string) => {
       <ul class="menu menu-horizontal px-1 text-slate-100">
         <li>
           <button
-            class={`btn text-lg lg:text-2xl btn-ghost ${checkIfCurrentPage('/projects') && 'btn-outline border-amber-400'}`}
+            class={`btn text-lg rounded-full lg:text-2xl btn-ghost ${checkIfCurrentPage('/projects') && 'btn-outline  border-amber-400'}`}
           >
             <a href={SITE_ROUTES.projects.url}>
               {SITE_ROUTES.projects.name}
@@ -31,7 +31,7 @@ const checkIfCurrentPage = (url: string) => {
         </li>
         <li>
           <button
-            class={`btn text-lg lg:text-2xl btn-ghost  ${checkIfCurrentPage('/posts') && 'btn-outline border-amber-400'}`}
+            class={`btn text-lg rounded-full lg:text-2xl btn-ghost  ${checkIfCurrentPage('/posts') && 'btn-outline  border-amber-400'}`}
           >
             <a href={SITE_ROUTES.blog.url}>
               {SITE_ROUTES.blog.name}

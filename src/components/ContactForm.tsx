@@ -34,10 +34,10 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center gap-4 text-center text-white">
-      <form onSubmit={handleSubmit(onSubmit)}>
+    <div className="grid place-items-center text-center text-white">
+      <form onSubmit={handleSubmit(onSubmit)} className="grid gap-4">
         {/* Name */}
-        <label className="form-control w-full max-w-xs">
+        <label className="form-control w-full max-w-xs justify-self-center">
           <Controller
             name="name"
             control={control}
@@ -58,7 +58,7 @@ const ContactForm = () => {
         </label>
 
         {/* Email */}
-        <label className="form-control mt-4 w-full max-w-xs">
+        <label className="form-control w-full max-w-xs justify-self-center">
           <Controller
             name="email"
             control={control}
@@ -78,24 +78,28 @@ const ContactForm = () => {
           )}
         </label>
 
-        <Controller
-          name="message"
-          control={control}
-          render={({ field }) => (
-            <textarea
-              className="textarea textarea-bordered textarea-lg  mt-4 w-full gap-4 border-amber-400 text-xl lg:w-96"
-              placeholder="Message"
-              {...field}
-            />
+        {/* Message */}
+        <div className="w-full max-w-xs justify-self-center">
+          <Controller
+            name="message"
+            control={control}
+            render={({ field }) => (
+              <textarea
+                className="textarea textarea-bordered textarea-lg w-72 border-amber-400 text-xl lg:w-96"
+                placeholder="Message"
+                {...field}
+              />
+            )}
+          />
+          {errors.message && (
+            <div className="label">
+              <span className="label-text-alt text-red-500">{errors.message.message}</span>
+            </div>
           )}
-        />
-        {errors.message && (
-          <div className="label">
-            <span className="label-text-alt text-red-500">{errors.message.message}</span>
-          </div>
-        )}
+        </div>
 
-        <div className="mt-8 flex justify-end">
+        {/* Submit Button */}
+        <div className="mt-8 justify-self-end">
           <button type="submit" className="btn border border-amber-400 text-xl text-white">
             {hasSubmitted ? `Thank you` : `Submit`}
           </button>
