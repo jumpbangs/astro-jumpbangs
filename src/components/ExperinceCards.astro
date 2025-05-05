@@ -10,8 +10,8 @@ import {
 import SkillList from 'components/common/SkillList.astro';
 ---
 
-<div class="mt-4s flex flex-col gap-3 text-2xl">
-  <ul class="timeline timeline-vertical timeline-snap-icon max-md:timeline-compact">
+<div class="mt-4s flex transform-gpu flex-col gap-3 text-2xl">
+  <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
     <li>
       <div class="timeline-middle py-2">
         <CornerUpLeftIcon customClasses="hidden md:block" />
@@ -57,6 +57,7 @@ import SkillList from 'components/common/SkillList.astro';
       </div>
       <hr class="bg-amber-400" />
     </li>
+
     <li data-aos="fade-right">
       <hr class="bg-amber-400" />
       <div class="timeline-middle py-2">

@@ -1,6 +1,8 @@
 ---
+// import ColorMode from 'components/common/ColorMode.astro';
 import Metadata from 'components/common/Metadata.astro';
 
+import 'styles/global.css';
 import 'styles/base.css';
 import 'aos/dist/aos.css';
 
@@ -12,7 +14,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" data-theme="forest">
   <head>
     <Metadata />
     <!-- <ColorMode /> -->
@@ -27,7 +29,7 @@ const { title } = Astro.props;
           <slot />
         </div>
       ) : (
-        <div class="container mx-auto min-h-screen w-full md:w-6/12">
+        <div class="mx-auto min-h-screen w-full md:w-6/12">
           <slot />
         </div>
       )

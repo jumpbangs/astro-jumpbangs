@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 960px;
+  --breakpoint-lg: 1440px;
+}
+
+@plugin "daisyui" {
+  themes:
+    light --default,
+    dark --prefersdark,
+    forest;
+}

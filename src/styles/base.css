@@ -1,45 +1,41 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .article-section {
-  @apply p-2;
+  @reference p-2;
 }
 
 .article-section h1 {
-  @apply my-2;
-  @apply text-2xl;
-  @apply font-bold;
+  @reference my-2;
+  @reference text-2xl;
+  @reference font-bold;
 }
 
 .article-section h2 {
-  @apply my-2;
-  @apply text-xl;
-  @apply font-semibold;
+  @reference my-2;
+  @reference text-xl;
+  @reference font-semibold;
 }
 
 .article-section h3 {
-  @apply my-2;
-  @apply text-lg;
-  @apply font-semibold;
+  @reference my-2;
+  @reference text-lg;
+  @reference font-semibold;
 }
 
 .article-section p {
-  @apply my-4;
-  @apply text-base;
+  @reference my-4;
+  @reference text-base;
 }
 
 .article-section ul {
-  @apply font-semibold;
-  @apply pl-4;
+  @reference font-semibold;
+  @reference pl-4;
 }
 
 .article-section li {
-  @apply list-decimal;
+  @reference list-decimal;
 }
 
 .article-section table {
-  @apply table;
+  @reference table;
 }
 
 .article-section thead tr {
@@ -89,4 +85,20 @@
   padding: 16px;
   margin: 10px 0px 10px;
   border-radius: 8px;
+}
+
+
+/* Define the keyframes */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 2.5rem)); /* Adjust the distance */
+  }
+}
+
+/* Apply the animation to a class */
+.animate-marquee {
+  animation: marquee 30s linear infinite;
 }

@@ -1,8 +1,7 @@
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
-import sitemap from '@astrojs/sitemap';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 import compress from 'astro-compress';
 import remarkCollapse from 'remark-collapse';
@@ -14,7 +13,6 @@ import { remarkReadingTime } from './remark-reading-time.mjs';
 export default defineConfig({
   site: 'https://www.amitchongbang.com.np/',
   integrations: [
-    tailwind(),
     sitemap(),
     react(),
     compress(),
@@ -37,5 +35,8 @@ export default defineConfig({
       wrap: true,
     },
     extendDefaultPlugins: true,
+  },
+  vite: {
+    plugins: [tailwindcss()],
   },
 });
