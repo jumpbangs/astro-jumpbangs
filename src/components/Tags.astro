@@ -11,7 +11,7 @@ const { tags, size = 'sm' } = Astro.props;
   {
     tags.map(tag => (
       <li
-        class={`inline-block pr-1 ${
+        class={`inline-block pr-1 px-1 ${
           size === 'sm' ? 'my-1 underline-offset-4' : 'mx-1 my-3 underline-offset-8'
         }`}
       >
