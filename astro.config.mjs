@@ -4,11 +4,12 @@ import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
-import compress from 'astro-compress';
 import remarkCollapse from 'remark-collapse';
 import remarkToc from 'remark-toc';
 
 import { remarkReadingTime } from './remark-reading-time.mjs';
+
+import playformCompress from '@playform/compress';
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,9 +17,9 @@ export default defineConfig({
   integrations: [
     sitemap(),
     react(),
-    compress(),
     mdx(),
     sitemap({ changefreq: 'weekly', priority: 0.7 }),
+    playformCompress(),
   ],
   markdown: {
     remarkPlugins: [
