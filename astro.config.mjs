@@ -2,6 +2,7 @@ import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
+import playformCompress from '@playform/compress';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 import remarkCollapse from 'remark-collapse';
@@ -9,11 +10,9 @@ import remarkToc from 'remark-toc';
 
 import { remarkReadingTime } from './remark-reading-time.mjs';
 
-import playformCompress from '@playform/compress';
-
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.amitchongbang.com.np/',
+  site: 'https://www.amitchongbang.xyz/',
   integrations: [
     sitemap(),
     react(),
@@ -41,5 +40,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  output: 'hybrid',
   adapter: vercel(),
 });
