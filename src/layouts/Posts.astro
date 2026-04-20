@@ -30,7 +30,7 @@ const { totalPages, postData, pageNumber } = Astro.props;
           <>
             <PostCard
               postIndex={index + 1}
-              slug={post.slug}
+              slug={post.data.postSlug || post.id}
               title={post.data.title}
               description={post.data?.description}
               tags={post.data.tags}

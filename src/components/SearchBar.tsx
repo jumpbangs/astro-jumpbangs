@@ -3,7 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 import Fuse from 'fuse.js';
 
 const options = {
-  keys: ['id', 'slug', 'data.tags'],
+  keys: ['id', 'data.postSlug', 'data.tags'],
   includeMatches: true,
   minMatchCharLength: 2,
   threshold: 0.5,
