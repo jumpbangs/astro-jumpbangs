@@ -17,7 +17,7 @@ export default defineConfig({
     react(),
     compress(),
     mdx(),
-    sitemap({ changefreq: 'weekly', priority: 0.7 }),
+    sitemap({ changefreq: 'weekly', priority: 0.7, filter: (page) => !page.includes('/projects/components/') && !/\/posts\/\d+\/?$/.test(page) }),
   ],
   markdown: {
     remarkPlugins: [

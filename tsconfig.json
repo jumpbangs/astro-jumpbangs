@@ -1,14 +1,14 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
     "paths": {
-      "components/*": ["src/components/*"],
-      "common/*": ["src/components/common/*"],
-      "styles/*": ["src/styles/*"],
-      "layouts/*": ["src/layouts/*"],
-      "utils/*": ["src/utils/*"],
-      "assets/*": ["src/assets/*"]
+      "components/*": ["./src/components/*"],
+      "common/*": ["./src/components/common/*"],
+      "styles/*": ["./src/styles/*"],
+      "layouts/*": ["./src/layouts/*"],
+      "utils/*": ["./src/utils/*"],
+      "assets/*": ["./src/assets/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
